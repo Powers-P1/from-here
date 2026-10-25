@@ -1,0 +1,202 @@
+{
+  "realLocalInference": true,
+  "sourceHash": "ee6e860233e21b1ad7e9e39bf3693d56823b9b6fbb7da52233ffc76111cb4e62",
+  "confirmation": "Technical proof confirms the actual extracted facts unchanged; participant interaction is not claimed.",
+  "extractionWasReused": true,
+  "facts": {
+    "who": {
+      "value": "Workshop attendees",
+      "status": "known"
+    },
+    "what": {
+      "value": "community workshop",
+      "status": "known"
+    },
+    "where": {
+      "value": "North Hall",
+      "status": "known"
+    },
+    "date": {
+      "value": "Tuesday, October 27, 2026",
+      "status": "known"
+    },
+    "time": {
+      "value": "6:00 PM",
+      "status": "known"
+    },
+    "timeMeaning": "from",
+    "exception": {
+      "status": "known",
+      "condition": "step-free access",
+      "instruction": "use the West Door"
+    }
+  },
+  "plan": {
+    "emphasis": "destination",
+    "scale": 1.15,
+    "exceptionScale": 1.1,
+    "margin": 18,
+    "reason": "Destination emphasis prioritizes 'North Hall' for attendees navigating to the venue. Maximum scale is used to optimize visibility for the 3m target distance, with a scaled exception to ensure the accessibility instruction is prominent and legible alongside its condition."
+  },
+  "readback": {
+    "who": {
+      "value": "WORKSHOP ATTENDEES",
+      "status": "known"
+    },
+    "what": {
+      "value": "COMMUNITY WORKSHOP",
+      "status": "known"
+    },
+    "where": {
+      "value": "NORTH HALL",
+      "status": "known"
+    },
+    "date": {
+      "value": "TUESDAY, OCTOBER 27, 2026",
+      "status": "known"
+    },
+    "time": {
+      "value": "6:00 PM",
+      "status": "known"
+    },
+    "timeMeaning": "from",
+    "exception": {
+      "status": "known",
+      "condition": "step-free access",
+      "instruction": "USE THE WEST DOOR"
+    }
+  },
+  "readbackTranscript": "WORKSHOP ATTENDEES\nCOMMUNITY\nWORKSHOP\nNORTH\nHALL\nTUESDAY, OCTOBER 27, 2026\nFROM 6:00 PM\nstep-free access:\nUSE THE WEST DOOR",
+  "report": {
+    "passed": true,
+    "content": true,
+    "layout": true,
+    "readback": true,
+    "matched": 5,
+    "total": 5,
+    "issues": [],
+    "rows": [
+      {
+        "key": "who",
+        "expected": "Workshop attendees",
+        "observed": "WORKSHOP ATTENDEES",
+        "passed": true
+      },
+      {
+        "key": "what",
+        "expected": "community workshop",
+        "observed": "COMMUNITY WORKSHOP",
+        "passed": true
+      },
+      {
+        "key": "where",
+        "expected": "North Hall",
+        "observed": "NORTH HALL",
+        "passed": true
+      },
+      {
+        "key": "when",
+        "expected": "Tuesday, October 27, 2026\nFrom 6:00 PM",
+        "observed": "TUESDAY, OCTOBER 27, 2026\nFrom 6:00 PM",
+        "passed": true
+      },
+      {
+        "key": "exception",
+        "expected": "step-free access: use the West Door",
+        "observed": "step-free access: USE THE WEST DOOR",
+        "passed": true
+      }
+    ],
+    "checkedArtifactHash": "52e6ec65094bc77d7d9f9bab979fd101793707973d526ec68a2a6c35e86bc0da"
+  },
+  "repairCount": 0,
+  "history": [
+    {
+      "id": "5e34c07a-c8ec-4b19-844a-ffb6374af614",
+      "type": "plan",
+      "text": "First layout planned",
+      "at": "2026-10-25T15:53:13.099Z",
+      "attempt": 0
+    },
+    {
+      "id": "791de2be-4e41-48d0-a9bb-f3832aa75bf5",
+      "type": "render",
+      "text": "Sign rendered",
+      "at": "2026-10-25T15:53:13.401Z",
+      "attempt": 0
+    },
+    {
+      "id": "7079d7d5-df1e-4e19-ad98-06567f007be0",
+      "type": "check",
+      "text": "Required details recovered from the sign",
+      "at": "2026-10-25T15:53:20.628Z",
+      "attempt": 0
+    },
+    {
+      "id": "f5f40fe1-6341-4217-9414-a272137e5375",
+      "type": "passed",
+      "text": "Automated checks passed",
+      "at": "2026-10-25T15:53:20.628Z",
+      "attempt": 0
+    }
+  ],
+  "receipts": [
+    {
+      "provider": "ollama",
+      "model": "qwen3-vl:2b-instruct",
+      "operation": "read_source",
+      "durationMs": 2350,
+      "inputTokens": 1517,
+      "outputTokens": 73,
+      "requestHash": "a4d50d89648a4e77039742350862f895a9d248ffdd710c18b61593d7f05c927a"
+    },
+    {
+      "provider": "vllm",
+      "model": "gemma-4-31b-it-qat-w4a16-ct",
+      "operation": "extract_notice",
+      "durationMs": 12141,
+      "inputTokens": 386,
+      "outputTokens": 288,
+      "requestHash": "cee27401693c0c178393c85b28813c3d9d896fe3119d10199e018deea401f19f"
+    },
+    {
+      "provider": "vllm",
+      "model": "gemma-4-31b-it-qat-w4a16-ct",
+      "operation": "plan_layout",
+      "durationMs": 1791,
+      "inputTokens": 272,
+      "outputTokens": 98,
+      "requestHash": "ac7bd8f7b3dc63458f9a61936f8c3f3abd995a8b0ef00b6b36abfe168e645ab0"
+    },
+    {
+      "provider": "ollama",
+      "model": "qwen3-vl:2b-instruct",
+      "operation": "read_sign",
+      "durationMs": 2316,
+      "inputTokens": 1903,
+      "outputTokens": 73,
+      "requestHash": "9a72ba12ced3c8f2637269e3e723bd67e8f45d39ea1bdb9d36e0116ad2f68eda",
+      "isolation": {
+        "input": "rendered_image",
+        "sourceIncluded": false,
+        "answerKeyIncluded": false,
+        "priorHistoryIncluded": false
+      }
+    },
+    {
+      "provider": "vllm",
+      "model": "gemma-4-31b-it-qat-w4a16-ct",
+      "operation": "parse_readback",
+      "durationMs": 4909,
+      "inputTokens": 308,
+      "outputTokens": 203,
+      "requestHash": "809f05dcc4d810221d5df80a7ad148d322db2f75a89d4ed2527510b9e5b02bc2",
+      "isolation": {
+        "input": "rendered_image_transcript",
+        "sourceIncluded": false,
+        "answerKeyIncluded": false,
+        "priorHistoryIncluded": false
+      }
+    }
+  ]
+}

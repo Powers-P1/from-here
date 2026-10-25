@@ -31,7 +31,7 @@ displayed plan. Mechanical verification and honest evidence remain mandatory.
   Learner check: Add another notice, confirm details and download it; report unclear actions or mismatches.
   Commit: `Build clear responsive notice workflow`
 
-- [ ] **3. Errors, returns and the optional memory exercise work**
+- [x] **3. Errors, returns and the optional memory exercise work**
   Becomes usable: Unknown data, stop quality, service retry, export error, source zoom, reset and memory exercise behave honestly.
   Why now: Completes the approved states without turning them into extra mandatory steps.
   PRD ref: `prd.md > States and Boundaries`, `Details and optional memory exercise`, `Cancel, retry and start again`
@@ -79,3 +79,6 @@ Activity mode: Autonomous execution requested; reference route and concise expla
 - Real glyph ink bounds replaced SVG em-cell bounds; the original measurement produced false margin failures. PDF page dimensions are normalized after Chromium rounding, then checked by reopening the resulting file.
 - Slice 2 verified: live development and built-production UI both completed the actual school workflow, including editing the extracted action, 5/5 isolated readback, comparison and PDF download. The 32 accepted visual states are implemented as eight responsive families. Actual screenshots were compared with representative approved references; this is not a claim of an exhaustive pixel diff or participant hands-on approval.
 - The shared UI families include recovery and Glance. Their distinct slice-3 checkpoint records adversarial interaction verification, rather than pretending these components were built as independent pages after the core.
+- Slice 3 verified: eight browser regressions pass against the production build after npm ci (45.3 seconds). They cover unknown-time blocking, invalid replacement retention, all fact editors, a delayed save, cancellation versus a late poll, consumed repair budgets, service retry, exhausted quality stop, draft labeling, Original-tab exports, export failure and recovery, reset and the complete memory exercise. These responses are intercepted test data; separate actual-source probes establish local AI behavior.
+- Independent review found that an unreadable exception retained old values and that a delayed Save could close a newer editor. Both were fixed and are covered by the browser regressions: non-known exceptions clear both values; the editor cannot close while saving.
+- Browser fixture outputs now live under tests/fixtures/checked-workshop with provenance, so a fresh clone can run interaction tests without external QA files or a model. Their reused source extraction remains labeled. QA output paths/base URL can be overridden for a separate production run.
