@@ -10,6 +10,7 @@
     "dev": "tsx server/index.ts",
     "start": "tsx server/index.ts --production",
     "build": "tsc --noEmit && vite build",
+    "build:site": "node site/build.mjs",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:browser": "playwright test",

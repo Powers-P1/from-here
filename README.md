@@ -2,7 +2,9 @@
 
 Turn a dense English notice photo into a clearer A3 sign while keeping its important details and conditional instructions.
 
-[Open the public application](https://from-here.onrender.com/) — no installation, account or visitor API key. The responsive web app uses server-side Claude Sonnet 5.5. The free host may take about a minute to wake after inactivity; download results before leaving because jobs are temporary.
+[Product website](https://powers-p1.github.io/from-here/) · [For the jury](https://powers-p1.github.io/from-here/jury/) · [Open the application](https://from-here.onrender.com/)
+
+No installation, account or visitor API key. The responsive web app uses server-side Claude Sonnet 5.5. Its optional [guided walkthrough](https://powers-p1.github.io/from-here/guide/) follows real completed actions through the checked PDF download. The free app host may take about a minute to wake after inactivity; the static product website and saved example remain available separately. Download results before leaving because jobs are temporary.
 
 Upload a PNG/JPG, confirm what it says, compare the original with the generated sign, and download an A3 portrait PDF or editable SVG. A viewing distance of 1, 3 or 5 metres is a design input, not a readability guarantee. The default is 3 metres.
 

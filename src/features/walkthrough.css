@@ -1,0 +1,6 @@
+.walkthrough { border-block: 1px solid var(--rule); border-left: 4px solid var(--yellow); padding: 9px 16px 16px; margin: 0 0 30px; max-width: 1000px; }
+.walkthrough-top { display: flex; gap: 16px; align-items: center; justify-content: space-between; font-size: 15px; color: var(--muted); }
+.walkthrough-top .text-button { font-size: 15px; flex-shrink: 0; }
+.walkthrough h2 { margin: 4px 0 7px; font-size: 23px; }
+.walkthrough p { font-size: 16px; line-height: 1.45; max-width: 750px; }
+@media (min-width: 900px) { .walkthrough { margin-bottom: 36px; padding: 9px 22px 18px; } .walkthrough h2 { font-size: 26px; } .walkthrough p { font-size: 18px; } }

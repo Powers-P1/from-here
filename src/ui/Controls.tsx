@@ -17,11 +17,11 @@ export function Brand() {
   return <span className="brand"><img src="/brand/from-here-wordmark.png" alt="FROM HERE" width="2176" height="724" /></span>;
 }
 
-export function Header({ onBack, onNew, onClose, timer, solo = false }: { onBack?: () => void; onNew?: () => void; onClose?: () => void; timer?: string; solo?: boolean }) {
+export function Header({ onBack, onNew, onClose, timer, solo = false, homeHref }: { onBack?: () => void; onNew?: () => void; onClose?: () => void; timer?: string; solo?: boolean; homeHref?: string }) {
   return <header className={`app-header${solo ? ' solo-header' : ''}`}>
     {onBack ? <span className="mobile-back"><IconButton label="Go back" onClick={onBack}><ChevronLeft /></IconButton></span> : null}
     <Brand />
-    <div className="header-actions">{timer ? <span className="muted">{timer}</span> : null}{onNew ? <TextButton onClick={onNew}>New notice</TextButton> : null}{onClose ? <IconButton label="Close" onClick={onClose}><X /></IconButton> : null}</div>
+    <div className="header-actions">{homeHref ? <a className="text-button" href={homeHref}>Product home</a> : null}{timer ? <span className="muted">{timer}</span> : null}{onNew ? <TextButton onClick={onNew}>New notice</TextButton> : null}{onClose ? <IconButton label="Close" onClick={onClose}><X /></IconButton> : null}</div>
   </header>;
 }
 
