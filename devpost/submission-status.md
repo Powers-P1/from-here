@@ -2,6 +2,8 @@
 
 Technical handoff for FROM HERE. This is not participant-authored submission prose or a claim of submission.
 
+Public product entry: https://powers-p1.github.io/from-here/ . The [jury page](https://powers-p1.github.io/from-here/jury/) includes the first-launch explanation, live walkthrough entry, source and verification links. Organisation, reader, guide and privacy pages are published alongside it. The real guided public workflow, including a checked A3 PDF download, was verified after deploying application commit `52c11de`.
+
 - Application: live at https://from-here.onrender.com/ on Render Free, with verified Claude Sonnet 5.5 inference, anonymous use and PDF/SVG export. The public workflow was checked in desktop and mobile browser viewports. No visitor installation, login or API key is needed. The host may take about a minute to wake after inactivity; jobs are temporary. The server key is private. The local build and previously validated optional local model profile remain available through `README.md`.
 - Source: reviewed code, 32 approved reference images, synthetic examples, setup instructions, MIT license and third-party notices are published at https://github.com/Powers-P1/from-here . The repository and README were checked without authentication (HTTP 200).
 - Earlier demo: actual local-model production interaction, 87.58-second H.264 MP4. English UI; shortened gaps are disclosed on the video. A new 93-second narrated Sonnet film is ready and has been provided for participant review before publication. No personal learning account is invented.
