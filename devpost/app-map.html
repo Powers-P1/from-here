@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FROM HERE — app map</title>
+<style>
+:root{color:#17282b;background:#fff;font:17px/1.6 system-ui,sans-serif}*{box-sizing:border-box}body{max-width:980px;margin:0 auto;padding:32px 24px 64px}header{border-bottom:1px solid #ccd4d6;padding-bottom:20px}h1{font-size:clamp(2rem,7vw,3rem);line-height:1.1;margin:10px 0}h2{margin-top:2rem;font-size:1.35rem}p{max-width:76ch}code{font:0.88em ui-monospace,monospace;overflow-wrap:anywhere}pre{white-space:pre-wrap;background:#f4f6f6;padding:16px}a{color:#005bbb;text-underline-offset:3px}a:focus-visible,summary:focus-visible{outline:3px solid #17282b;outline-offset:4px}.eyebrow{font-size:.8rem;letter-spacing:.07em;text-transform:uppercase}.route{display:flex;flex-wrap:wrap;align-items:center;gap:12px;padding:20px 0;border-block:1px solid #ccd4d6}.route span{padding:8px 12px;border:1px solid #ccd4d6}.route span:last-child{background:#f1e36a;border-color:#f1e36a}.route b{font-weight:400}.stops{padding-left:24px}.stops li{padding:8px 0 16px}details{padding:12px 0;border-top:1px solid #ccd4d6}summary{cursor:pointer;font-weight:600}.muted{color:#50646c}td,th{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px solid #ccd4d6}table{border-collapse:collapse;width:100%;font-size:.94rem}footer{margin-top:36px;padding-top:16px;border-top:1px solid #ccd4d6}
+</style>
+<header><div class="eyebrow">FROM HERE / reference guide</div><h1>One notice. One checked sign.</h1><p>A photo becomes a clearer A3 sign. Its author confirms the facts; local AI plans the layout and reads the actual result. The same checked artwork becomes the PDF.</p><p class="muted">This is a reference route through the implementation, not a claim that the participant completed a guided tour.</p></header>
+<main>
+<h2>Follow “Confirm &amp; redesign”</h2>
+<div class="route" role="img" aria-label="Confirmed facts go to a bounded design and fresh image read, then to the checked SVG and A3 PDF"><span>Confirm facts</span><b aria-hidden="true">→</b><span>Plan · render · fresh read</span><b aria-hidden="true">→</b><span>Checked SVG / A3 PDF</span></div>
+<ol class="stops">
+<li><strong>Keep the author's version.</strong><br><code>src/workflow/useWorkflow.ts → saveFacts / act</code><p>The interface saves edited facts and sends their version when design starts. <code>server/jobs.ts → updateFacts</code> invalidates the previous preview and report, so an old pass cannot approve a changed notice.</p></li>
+<li><strong>Make and inspect a real sign.</strong><br><code>server/agent/pipeline.ts → designAndCheck</code><p>The agent gets a bounded layout plan, calls the renderer and reads the resulting PNG. <code>server/agent/prompts.ts → readSign</code> receives only that image; its fresh parser sees only the new transcription. Neither step receives the original or expected answers. Two repairs is the maximum, not a required animation.</p></li>
+<li><strong>Export the checked artwork.</strong><br><code>server/api.ts → GET /jobs/:id/download</code><p>The API checks the report and artifact hash before allowing a final export. <code>server/render/renderer.ts → exportPdf</code> uses the same SVG, waits for fonts and creates one exact 297 × 420 mm page. A stopped result can only offer an explicitly unchecked SVG draft.</p></li>
+</ol>
+<h2>To change this, start here</h2>
+<table><thead><tr><th>Change</th><th>Starting point</th></tr></thead><tbody>
+<tr><td>Interface wording or an empty state</td><td><code>src/features/Upload.tsx</code>, <code>Facts.tsx</code> and <code>Progress.tsx</code></td></tr>
+<tr><td>Space, colors or control size</td><td><code>src/ui/styles.css</code> and <code>Controls.tsx</code>; compare the accepted references in <code>design/approved/</code></td></tr>
+<tr><td>What counts as an unreadable fact</td><td><code>shared/contracts.ts → blockingFacts</code>; changing this affects whether the author can proceed</td></tr>
+<tr><td>Sign hierarchy and actual print geometry</td><td><code>server/render/renderer.ts → renderSign</code>; content always comes from locked facts</td></tr>
+<tr><td>The optional memory exercise</td><td><code>src/features/Glance.tsx</code>; it never upgrades the automatic report</td></tr>
+</tbody></table>
+<h2>A practice to reuse</h2>
+<p>Define the failure before calling a result “checked”. An early comparison treated “Grades 1–2” like “Grades 12”. <code>tests/contracts.test.ts</code> now rejects that difference and keeps entire time/date ranges. The acceptance criterion in <code>devpost/prd.md → Confirm facts and conditions</code> has an observable test. For another project, choose one small example where a plausible-looking answer would still be wrong.</p>
+<details><summary>What the evidence does and does not establish</summary><p>The kernel proof uses actual local inference, generated artwork and a reopened PDF. Browser regression tests use explicitly mocked API responses, so they test interactions and recovery. Neither is a human reading-distance or accessibility certification. Personal learning reflections and survey answers are not supplied by the agent.</p></details>
+<details><summary>Main pieces and temporary storage</summary><p>React renders the interface. Express holds transient jobs in memory; jobs more than 60 minutes old are removed when idle. Ollama Qwen3-VL transcribes images; local vLLM Gemma parses facts and plans layouts. Chromium measures actual fonts, rasterizes and prints. Restarting the app clears jobs. No account, database or cloud API key is part of this build.</p></details>
+<h2>Run it again</h2><pre>npm ci
+npx playwright install chromium
+npm run dev
+# Open http://127.0.0.1:4176
+
+# Production UI:
+npm run build
+npm start</pre><p>Use Node 24 or later and the local model endpoints documented in <code>README.md</code> and <code>.env.example</code>. Tests: <code>npm test</code>. With the app running: <code>npm run test:browser</code>. Genuine model proof: <code>npm run prove:kernel</code>.</p>
+</main><footer class="muted">Implementation snapshot: 25 October 2026. Exact release commit is recorded in <code>docs/release-verification.md</code>. This file works offline without scripts, fonts or network access; refresh it if the mapped behavior changes.</footer></html>

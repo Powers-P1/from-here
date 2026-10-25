@@ -8,7 +8,7 @@ import { newDesignContext,designAndCheck } from '../server/agent/pipeline.js';
 import { closeRenderBrowser,exportPdf } from '../server/render/renderer.js';
 import { ModelError } from '../server/agent/provider.js';
 
-const out = resolve('../outputs/from-here/product-qa/kernel');
+const out = resolve(process.env.PROOF_OUTPUT_DIR || '../outputs/from-here/product-qa/kernel');
 await mkdir(out,{recursive:true});
 try {
   const path = resolve(process.argv[2] || 'public/samples/community-workshop.png');

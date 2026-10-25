@@ -1,0 +1,10 @@
+{
+  "capturedAt": "2026-10-25T16:48:00.233Z",
+  "jobId": "126439f9-f55c-4a44-9218-76ae2f213704",
+  "factsVersion": 2,
+  "artifactHash": "c185e73f0f655a359d8776bbfd1023dfcd761455cbf618de86932e6a16ec92f3",
+  "matched": 5,
+  "total": 5,
+  "repairCount": 0,
+  "method": "Actual UI journey, then read-only HTTP artifact capture. No model response was substituted."
+}

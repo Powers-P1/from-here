@@ -64,8 +64,8 @@ displayed plan. Mechanical verification and honest evidence remain mandatory.
 - [ ] Optional edit and transfer reflection addressed honestly.
 - [ ] `devpost/app-map.html` generated from finished code, checked and shown.
 
-Activity and evidence: Pending implementation; do not claim participant learning.
-Route and stops: To be based on actual source after revisions.
+Activity and evidence: Code-grounded reference map prepared and opened in the Codex file panel (queued). Its browser preview was blocked by URL policy; source paths were checked statically. No participant learning or completed guided activity is claimed.
+Route and stops: useWorkflow saveFacts/act → designAndCheck/readSign → download/exportPdf. Reference route, not participant-led practice.
 Edit outcome: Not performed.
 Reflection: Not supplied.
 Activity mode: Autonomous execution requested; reference route and concise explanation will accompany the product.
@@ -82,3 +82,5 @@ Activity mode: Autonomous execution requested; reference route and concise expla
 - Slice 3 verified: eight browser regressions pass against the production build after npm ci (45.3 seconds). They cover unknown-time blocking, invalid replacement retention, all fact editors, a delayed save, cancellation versus a late poll, consumed repair budgets, service retry, exhausted quality stop, draft labeling, Original-tab exports, export failure and recovery, reset and the complete memory exercise. These responses are intercepted test data; separate actual-source probes establish local AI behavior.
 - Independent review found that an unreadable exception retained old values and that a delayed Save could close a newer editor. Both were fixed and are covered by the browser regressions: non-known exceptions clear both values; the editor cannot close while saving.
 - Browser fixture outputs now live under tests/fixtures/checked-workshop with provenance, so a fresh clone can run interaction tests without external QA files or a model. Their reused source extraction remains labeled. QA output paths/base URL can be overridden for a separate production run.
+- Release mechanics verified: fresh npm ci, 20 tests, build and eight production-browser tests pass. Windows launcher starts the production server. The 87.58-second actual-app recording decodes fully and discloses cuts. Public video publication remains pending YouTube's action-time terms confirmation; participant form answers, hands-on review and submission are not invented.
+- One all-2B CPU experiment completed but correctly stopped at 2/5 readback after two repairs. It is rejected as a supported minimum. The default verified Qwen/Gemma setup is retained and its external model-host requirements are documented.
