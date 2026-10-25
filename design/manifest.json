@@ -1,0 +1,136 @@
+{
+  "approvedReferenceCount": 32,
+  "referenceRoot": "approved",
+  "amendments": "ux-amendments.json",
+  "rendering": "All interface controls are HTML; original and generated sign previews are actual API assets.",
+  "families": [
+    {
+      "family": "upload",
+      "mobile": [
+        "M01",
+        "M02",
+        "M03",
+        "M04"
+      ],
+      "desktop": [
+        "D01"
+      ],
+      "triggers": [
+        "initial empty source",
+        "successful image upload",
+        "unsupported or corrupt file rejection",
+        "reading phase"
+      ]
+    },
+    {
+      "family": "facts",
+      "mobile": [
+        "M05",
+        "M06",
+        "M07"
+      ],
+      "desktop": [
+        "D02"
+      ],
+      "triggers": [
+        "review with complete facts",
+        "review with blocking unknown fact",
+        "edit any fact row"
+      ]
+    },
+    {
+      "family": "progress",
+      "mobile": [
+        "M08",
+        "M09",
+        "M10",
+        "M11"
+      ],
+      "desktop": [
+        "D03",
+        "D04"
+      ],
+      "triggers": [
+        "planning/rendering/checking phase",
+        "repairing phase or repair history",
+        "quality stopped phase",
+        "service interrupted phase or failed polling"
+      ]
+    },
+    {
+      "family": "comparison",
+      "mobile": [
+        "M12",
+        "M13"
+      ],
+      "desktop": [
+        "D05"
+      ],
+      "triggers": [
+        "passed artifact",
+        "Original tab"
+      ]
+    },
+    {
+      "family": "checks",
+      "mobile": [
+        "M14"
+      ],
+      "desktop": [
+        "D06"
+      ],
+      "triggers": [
+        "Details / View checks and changes"
+      ]
+    },
+    {
+      "family": "dialogs",
+      "mobile": [
+        "M15",
+        "M16",
+        "M17"
+      ],
+      "desktop": [
+        "D07"
+      ],
+      "triggers": [
+        "successful blob download",
+        "failed blob download",
+        "New notice or valid replacement"
+      ]
+    },
+    {
+      "family": "source",
+      "mobile": [
+        "M23"
+      ],
+      "desktop": [],
+      "triggers": [
+        "View original or click original paper"
+      ]
+    },
+    {
+      "family": "glance",
+      "mobile": [
+        "M18",
+        "M19",
+        "M20",
+        "M21",
+        "M22",
+        "M24"
+      ],
+      "desktop": [
+        "D08"
+      ],
+      "triggers": [
+        "Try a memory check",
+        "countdown completes",
+        "two-second exposure completes",
+        "matching submitted answer",
+        "different submitted answer",
+        "Show the sign"
+      ]
+    }
+  ],
+  "browserFidelity": "Representative reference/render pairs inspected: D02, D05, M07, M12, M20. Responsive browser checks at 320/390/768/1024/1440; live school workflow also passed. No exhaustive pixel-diff or human reading-distance certification claimed."
+}

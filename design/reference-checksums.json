@@ -1,0 +1,166 @@
+{
+  "count": 32,
+  "allUnchanged": true,
+  "references": [
+    {
+      "file": "design/approved/mobile/M01-upload-empty.png",
+      "sha256": "0a07ff9551eae2f0e69e5e47e3ff11e445c52e4cff3c28146e904b0bb239e978",
+      "unchanged": true
+    },
+    {
+      "file": "design/approved/mobile/M02-upload-selected.png",
+      "sha256": "fc2aaddef6ab77f80cdf2b8bf3632bfad92466d711f47916c024314f267e204b",
+      "unchanged": true
+    },
+    {
+      "file": "design/approved/mobile/M03-file-rejected.png",
+      "sha256": "d93bef75f0d7b0e359ea766c7fcd04d62e324109516e200e1ada185c05de6998",
+      "unchanged": true
+    },
+    {
+      "file": "design/approved/mobile/M04-reading-source.png",
+      "sha256": "10e022adc4aa1d301270b4bf61668f845737c4a4ed28131690131c50581286a9",
+      "unchanged": true
+    },
+    {
+      "file": "design/approved/mobile/M05-confirm-facts.png",
+      "sha256": "4d7a6c78ca1b269bea4b53eb1898d3dd8dbc0f3b4e7782f5392ece2f84ff248d",
+      "unchanged": true
+    },
+    {
+      "file": "design/approved/mobile/M06-unknown-time-hard-block.png",
+      "sha256": "92c1b7ac89c2abae8f53fd4479336d5aa4b40e6f742dcff4b1d9144e835e012f",
+      "unchanged": true
+    },
+    {
+      "file": "design/approved/mobile/M07-edit-fact-with-source.png",
+      "sha256": "2bc3bad1e6e0474d05941df02d07aac44703e6a6f4f3803c34e27d3c70e81b30",
+      "unchanged": true
+    },
+    {
+      "file": "design/approved/mobile/M08-redesign-in-progress.png",
+      "sha256": "cdd55d6dd90f8e75156f174d2a7db07b0241cf3b1c52cce13e5fe57f93769553",
+      "unchanged": true
+    },
+    {
+      "file": "design/approved/mobile/M09-repair-in-progress.png",
+      "sha256": "949401053b12a44cbee1dc4036fba986598a868cce18ae57dd776f72ee52d2fd",
+      "unchanged": true
+    },
+    {
+      "file": "design/approved/mobile/M10-checks-failed-after-two-repairs.png",
+      "sha256": "b2b181030174ae6767a437f9ca117b12eba85a33a341a2d75ed5d8325118a7a7",
+      "unchanged": true
+    },
+    {
+      "file": "design/approved/mobile/M11-ai-service-interrupted.png",
+      "sha256": "0250d2742092881c36a0e637a6d39e3e1421b5825c711a6b004c9eab8f78c51d",
+      "unchanged": true
+    },
+    {
+      "file": "design/approved/mobile/M12-redesigned-result.png",
+      "sha256": "239f60e2df5b01cafc968160f9aeb1a3fdeabf1b99b0547eff175027c0d77bee",
+      "unchanged": true
+    },
+    {
+      "file": "design/approved/mobile/M13-original-tab.png",
+      "sha256": "9765c5be6c6b6bdb0e91ac94a6f52da0b6c6151dcd7a5db0c89c90c7ea00e594",
+      "unchanged": true
+    },
+    {
+      "file": "design/approved/mobile/M14-check-details-and-current-run-history.png",
+      "sha256": "e66f81261c511356a36efc1acb553a71e6c418488d546ef702954dff734dfc34",
+      "unchanged": true
+    },
+    {
+      "file": "design/approved/mobile/M15-download-started.png",
+      "sha256": "d7520c973b32c1699752bb1dce8ba47c27f978dcf5ec9abfbebde8b921da87aa",
+      "unchanged": true
+    },
+    {
+      "file": "design/approved/mobile/M16-download-error.png",
+      "sha256": "089266a929ec1e3602cd4927496816b606a970818c7fea62b2e06a737a49fe43",
+      "unchanged": true
+    },
+    {
+      "file": "design/approved/mobile/M17-reset-confirmation.png",
+      "sha256": "2a9bebfb13e674f222f312624f5fce4d1b338c8fcd877b8ae3e25c2ddd098c28",
+      "unchanged": true
+    },
+    {
+      "file": "design/approved/mobile/M18-glance-introduction.png",
+      "sha256": "993a3312adaef16fc1a69609d374e4240b2f70d7c868de137f2d903bbf3cc18f",
+      "unchanged": true
+    },
+    {
+      "file": "design/approved/mobile/M19-glance-exposure.png",
+      "sha256": "c26de2251a03b813128f84a49d12c0e8c28081c900afadfc68303976f2045d99",
+      "unchanged": true
+    },
+    {
+      "file": "design/approved/mobile/M20-glance-question.png",
+      "sha256": "1b2823dcc6b33daf03f8ced630d1130a2930b65d7d4fc0b7e63eeef1ee9bebbc",
+      "unchanged": true
+    },
+    {
+      "file": "design/approved/mobile/M21-glance-correct-answer.png",
+      "sha256": "4ad9f62b9cbe49c89b0409a63b2d1f1f80f7a5381a5a9b1a43384c1d1bd6a0a0",
+      "unchanged": true
+    },
+    {
+      "file": "design/approved/mobile/M22-glance-wrong-answer.png",
+      "sha256": "f661082eb93a9eef0ca48933f14fa6fbe0b4c2ace7aed3b41985ccf577c749e9",
+      "unchanged": true
+    },
+    {
+      "file": "design/approved/mobile/M23-original-source-viewer.png",
+      "sha256": "f8c1ea691dd6fc7b8f987ceeef57de9360da78c857719c9addb807b408d3e513",
+      "unchanged": true
+    },
+    {
+      "file": "design/approved/mobile/M24-glance-countdown.png",
+      "sha256": "699efe076a8e5b42ea15ddc98729adbc5a908a3b87011bbd3ef474eb43de6524",
+      "unchanged": true
+    },
+    {
+      "file": "design/approved/desktop/D01-upload-workspace.png",
+      "sha256": "ddc74615f46dc5a582299b1217db0a56fcdc0555cb41af5c8d01d97d737f7f87",
+      "unchanged": true
+    },
+    {
+      "file": "design/approved/desktop/D02-confirm-and-edit-beside-source.png",
+      "sha256": "d1058dfab880f0ed89e4ff2a6c927e5ff63356e6c73885619c9dbd134a773752",
+      "unchanged": true
+    },
+    {
+      "file": "design/approved/desktop/D03-working-and-repair.png",
+      "sha256": "ffa0683bdc5a97b1148d57c464599299a615d599bda170dc8a103333d0d2ab2b",
+      "unchanged": true
+    },
+    {
+      "file": "design/approved/desktop/D04-failure-and-recovery.png",
+      "sha256": "5a57881d566a6cf0ceaf20c4fb6435332223ede5aa67f48568c3c46e91e16cfe",
+      "unchanged": true
+    },
+    {
+      "file": "design/approved/desktop/D05-comparison-and-passed-checks.png",
+      "sha256": "6f36230edc4b769c1dd142defa196d41c585aa64cba06ce4e87dd5ceb9e3cc3d",
+      "unchanged": true
+    },
+    {
+      "file": "design/approved/desktop/D06-details-and-current-run-history.png",
+      "sha256": "cd3d0bc4435b1e3848ae9623bb9b158cbb5c98ce54fe7d6cf0c88cc7db48dfab",
+      "unchanged": true
+    },
+    {
+      "file": "design/approved/desktop/D07-export-error-dialog.png",
+      "sha256": "014ec873a8b0db7dcad36dc46063fb607c969c463f063cfce2b25fa534301f19",
+      "unchanged": true
+    },
+    {
+      "file": "design/approved/desktop/D08-glance-question.png",
+      "sha256": "31a6f914323d74489f807e0d1b4da6923644884dadf00bb0e20908cbe9aa9957",
+      "unchanged": true
+    }
+  ]
+}

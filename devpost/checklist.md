@@ -21,7 +21,7 @@ displayed plan. Mechanical verification and honest evidence remain mandatory.
   Learner check: Open the generated image and PDF; compare audience, location, FROM time and accessible entrance with the source.
   Commit: `Prove real vision to checked A3 export`
 
-- [ ] **2. The author completes the core journey in the actual interface**
+- [x] **2. The author completes the core journey in the actual interface**
   Becomes usable: Upload, read, edit/confirm, design, compare and download on mobile and desktop.
   Why now: Makes the proven kernel usable in the approved visual system.
   PRD ref: `prd.md > The Core Journey`, `Look and Feel`
@@ -77,3 +77,5 @@ Activity mode: Autonomous execution requested; reference route and concise expla
 - A real Gemma JSON whitespace loop interrupted school readback. A discriminator-first exception schema and compact-JSON instruction resolved that observed failure without accepting incomplete data. Actual unclear-time and absent-field source probes passed again after this change.
 - Independent review exposed numeric-range/date-range/time normalization errors; regression tests now retain complete ranges and never infer AM/PM. Identified codes, URLs and marked literals also retain case instead of receiving the ordinary heading-capital style.
 - Real glyph ink bounds replaced SVG em-cell bounds; the original measurement produced false margin failures. PDF page dimensions are normalized after Chromium rounding, then checked by reopening the resulting file.
+- Slice 2 verified: live development and built-production UI both completed the actual school workflow, including editing the extracted action, 5/5 isolated readback, comparison and PDF download. The 32 accepted visual states are implemented as eight responsive families. Actual screenshots were compared with representative approved references; this is not a claim of an exhaustive pixel diff or participant hands-on approval.
+- The shared UI families include recovery and Glance. Their distinct slice-3 checkpoint records adversarial interaction verification, rather than pretending these components were built as independent pages after the core.

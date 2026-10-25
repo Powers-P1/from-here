@@ -1,0 +1,137 @@
+FROM HERE — PRZEGLĄD CZYTELNOŚCI I PROSTOTY
+25.10.2026 | Odpowiedzialny: lead projektu
+
+WERDYKT
+Zachowuję koncepcję, charakter wizualny i układy. Projekt nadaje się do
+wykonania po uwzględnieniu opisanych niżej korekt UX. Nie wymaga nowych funkcji.
+Największym problemem jest miejscami język opisujący pracę modeli. Drugi to
+ukryte rozpoczęcie kolejnego ogłoszenia na telefonie. Sam układ jest oszczędny
+i czytelny; duże napisy, biel, kontrast i prosty akcent pasują do zastosowania.
+
+To przegląd heurystyczny rzeczywistych obrazów, bez nowej oceny koncepcji
+i bez oceny działającego prototypu. Nie wykonano jeszcze testu z użytkownikami,
+kliknięć w przeglądarce ani próby odczytania fizycznego wydruku z trzech metrów.
+
+JAK SPRAWDZAŁEM
+Obejrzałem wszystkie 24 widoki mobilne ponownie przy szerokości 390 px, a osiem
+desktopowych w pełnym obrazie. Plansze evidence/mobile-01.png–mobile-08.png
+zawierają trzy telefony na planszę, bez zmiany oryginalnych PNG. Przeszedłem
+główną ścieżkę oraz błędny plik, brak godziny, naprawę, zatrzymanie po dwóch
+próbach, awarię usługi, pobieranie, nowy dokument i ćwiczenie pamięci.
+Sprawdziłem również mapę przejść, nie tylko wygląd przycisków.
+
+CO DZIAŁA I ZOSTAJE
+- Na większości ekranów jest jedno dominujące działanie. Dalszy krok jest
+  przewidywalny: dodaj źródło, sprawdź fakty, odbierz wynik.
+- Interfejs nie wymaga czatu, edytora graficznego, konta ani znajomości modeli.
+- Ważne wartości są oddzielone od etykiet. Warunek dostępnego wejścia jest
+  grupą znaczeniową; nie zmienia ogólnego wejścia dla pozostałych odbiorców.
+- Oryginał pozostaje dostępny. Widok nieznanej godziny nie podsuwa odpowiedzi.
+- Porównanie pokazuje konkretną zmianę w komunikacie. Mocna typografia plakatu
+  jest własnym charakterem produktu; interfejs użytkowy pozostaje spokojny.
+- Ćwiczenie pamięci jest opcjonalne i nie blokuje pobrania. Szczegóły kontroli
+  mają osobny widok, więc podstawowy przepływ pozostaje krótki.
+
+KOREKTY DO UWZGLĘDNIENIA PRZED ODBIOREM IMPLEMENTACJI
+Priorytet P1 oznacza wymagane do odbioru, P2 — niewielkie dopracowanie.
+
+UX01 / P1 — M09, M10, M14, D03–D07: prostszy język kontroli.
+„The model did not recover the access note”, „Image readback” i „Current run
+history” wymagają rozumienia mechanizmu AI. Użytkownik powinien wiedzieć,
+która informacja sprawiła problem i co aplikacja robi dalej.
+Ustalenie: nazwać problem po ludzku i zgodnie z rzeczywistym wynikiem kontroli.
+Np. „The AI check could not read the wheelchair pickup note.” / „Changes made” /
+„AI read from the sign”. Zachować informację, że to odczyt AI, nie dowód
+zrozumienia przez człowieka. Nie zamieniać sprawdzenia modelu w gwarancję.
+Kryterium: osoba bez wiedzy o AI potrafi wskazać problem i dostępny dalszy krok.
+
+UX02 / P1 — M12, M13, M15: nowe ogłoszenie dostępne z wyniku.
+Obecnie mobilne New notice jest dopiero w M14, czyli w szczegółach kontroli.
+To nie jest naturalne miejsce rozpoczęcia kolejnej pracy.
+Ustalenie: ten sam spokojny link w nagłówku wyniku i zakładki Original;
+po pobraniu powrót prowadzi do tego wyniku. Istniejący M17 chroni bieżącą pracę.
+Nie dodawać menu, paska nawigacji ani drugiego żółtego przycisku.
+Kryterium: rozpoczęcie kolejnego ogłoszenia nie wymaga wejścia do kontroli AI.
+
+UX03 / P1 — M01, M02, D01: jednoznaczny rezultat i pytanie o dystans.
+Ogólne „clearer” oraz „Target viewing distance” są poprawne, lecz nie tłumaczą
+od razu, że powstaje tablica do wydruku i skąd bierze się odległość.
+Ustalenie: wykorzystać istniejące miejsca na tekst: „Turn a notice into a clear
+A3 sign.” oraz „How far away will people read it?”. Pozostawić 1 m / 3 m / 5 m
+z domyślnym 3 m. Dystans jest celem projektu, a nie potwierdzonym pomiarem.
+„Read notice” zmienić na „Find key details”, aby zapowiadało kolejny ekran.
+Kryterium: po pierwszym ekranie wiadomo, co dodać i jaki plik otrzymać.
+
+UX04 / P1 — M06, M07, D02: nie zachęcać do zgadywania brakującej godziny.
+Puste pole i blokada działają koncepcyjnie dobrze. „Meaning / From this time”
+brzmi jak pole techniczne, a sam nakaz wpisania czasu może skłonić do zgadywania.
+Ustalenie: „Pickup starts at this time” oraz krótka podpowiedź „Enter a confirmed
+time. If you do not know it, use a clearer photo.”. Udostępnić powrót do zmiany
+źródła z istniejącego przepływu. Zapis opisuje konkretną czynność: „Confirm time”.
+Nie umieszczać przykładowej faktycznej godziny w pustym polu.
+Kryterium: użytkownik rozumie blokadę i potrafi z niej wyjść bez wymyślania danych.
+
+UX05 / P1 — formularze, ikony i drobne linki: odbiór na działającym telefonie.
+Widoczne znaki ołówka i X są małe, a w arkuszu M07 część podpisów i przycisk
+zapisu mają mniejszą skalę niż podstawowy tekst. Z PNG nie da się ustalić
+rzeczywistego obszaru dotyku, semantyki ani zachowania nad klawiaturą.
+Ustalenie projektu: tekst podstawowy i wpisywany min. 16 px, etykiety/pomoc
+min. 14 px; dotykowe obszary akcji docelowo 44 × 44 px. Ikona może być mniejsza
+od obszaru aktywnego. Widok może się przewijać; nie zmniejszać liter, by zmieścić
+wszystko w 844 px wysokości. Cały wiersz faktu może otwierać edycję.
+Kryterium: 320/390 px szerokości, klawiatura, powiększenie 200%, widoczny fokus,
+czytelny błąd przy polu, możliwość cofnięcia i brak uciętego działania głównego.
+
+UX06 / P2 — M10, M12, M16, D04, D05, D07: sens drugiego formatu.
+PDF jest oczywistym podstawowym wyborem. SVG jest mniej znany odbiorcy.
+Ustalenie: drugi link „Download editable SVG”; dla niezaliczonego wyniku
+„Download draft SVG (unchecked)”. Przycisk błędu kontroli „Review confirmed
+details” prowadzi do faktów, zgodnie z nazwą; nie udaje widoku diagnostyki.
+Zachować jawne rozróżnienie szkicu od sprawdzonego wyniku.
+
+WARUNKI IMPLEMENTACYJNE WYNIKAJĄCE Z PRZEGLĄDU
+- Trzy główne zadania, nie 32 kroki. Odczyt, render i ponowne sprawdzenie
+  przechodzą automatycznie. Użytkownik reaguje na brak danych lub błąd.
+- Fakty „niepodane w źródle” i „nieczytelne” są różnymi stanami. Ogłoszenie bez
+  wyjątku nie może zmuszać do jego wymyślenia. Nieczytelnego warunku nie wolno
+  uznać za brak wyjątku. Licznik kontroli odzwierciedla fakty tego ogłoszenia.
+- Jeden rzeczywisty artefakt SVG zasila podgląd i eksport. Różne rastrowe
+  proporcje makiet nie mogą prowadzić do różnych wersji informacji. M08 wymaga
+  dokładnego A3 w implementacji, tak jak wynik i PDF.
+- Automatyczne sprawdzenie nie uprawnia do obietnicy czytelności z dystansu.
+  Potrzebny jest osobny test rzeczywistego wydruku; należy zapisać jego warunki.
+- Powroty i ponowienia zachowują kontekst. Zmiana faktu unieważnia poprzedni
+  wynik kontroli, a spóźniona odpowiedź AI nie może przywrócić starej treści.
+
+KONTRAST
+Dla przyjętych tokenów obliczono: ink/biel 15,27:1; ink/żółty 11,59:1;
+niebieski link/biel 6,69:1; tekst drugorzędny/biel 6,09:1. To dobry punkt
+wyjścia. Żółty/biel ma 1,32:1, dlatego sam żółty nie powinien przekazywać stanu
+wyboru, błędu ani fokusu. Wyniki dotyczą tokenów, nie certyfikacji każdego
+antyaliasowanego piksela PNG lub gotowej aplikacji.
+Wymagania odbioru oparto na źródłach W3C: kontrast zwykłego tekstu 4,5:1 oraz
+minimalne cele dotykowe 24 CSS px z wyjątkami. Nasz cel 44 px jest wyborem UX.
+
+SPRAWDZENIE Z UŻYTKOWNIKAMI — DO WYKONANIA NA PROTOTYPIE
+Krótka sesja z trzema osobami, które nie projektowały aplikacji. Każda dodaje
+źródło, poprawia jeden fakt, pobiera wynik i zaczyna nową pracę. Bez podpowiadania
+obserwujemy pierwsze kliknięcie, zatrzymania i pomyłki. Zapisujemy rzeczywiste
+wyniki, nie deklarujemy walidacji na podstawie agentów.
+Cel roboczy: wszystkie osoby kończą główny przepływ bez instrukcji prowadzącego
+i odróżniają sprawdzony wynik od niesprawdzonego szkicu. Każda krytyczna pomyłka
+prowadzi do poprawki i powtórzenia właściwego zadania. Gdy uczestników nie ma,
+wynik pozostaje „brak testu z użytkownikami”, a nie „potwierdzona intuicyjność”.
+
+DECYZJA LEADA
+Przechodzimy do planu realizacji w istniejącym zakresie. Korekty są zapisane
+jako jawna poprawka tekstów i zachowania, nie zostały jeszcze naniesione na PNG
+ani zaimplementowane. Nie otwieramy następnej serii generowania 32 obrazów.
+Przedstawiony plan wykonania ma najpierw dowieść działania rdzenia AI.
+
+ŹRÓDŁA
+Nielsen Norman Group, Aesthetic and Minimalist Design:
+https://www.nngroup.com/articles/aesthetic-minimalist-design/
+W3C, Contrast (Minimum):
+https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html
+W3C, Target Size (Minimum):
+https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html

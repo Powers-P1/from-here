@@ -1,0 +1,5 @@
+Use case: background-extraction. Asset type: standalone FROM HERE app wordmark with genuine transparent alpha, for a responsive website header. Input image is the approved M05 app screen; it is a reference for the logo alone. Extract and faithfully recreate ONLY the top wordmark: the exact uppercase words "FROM HERE" in the same very heavy compact condensed ink-black type (#17282B), on one line, with the short yellow (#F1E36A) right-angle focus corner rising just above the upper right end. Preserve the wordmark's personality, letter spacing and corner placement. No back arrow, no white background, no page or other UI, no surrounding line, no poster, no new design, no added symbols. Crisp flat branding, centered tightly in a wide transparent canvas. The logo must be readable at small header sizes.
+
+Mode: built-in image_gen with transparent_background=true.
+Reference: ../outputs/from-here/full-design/mobile/M05-confirm-facts.png
+Output: public/brand/from-here-wordmark.png

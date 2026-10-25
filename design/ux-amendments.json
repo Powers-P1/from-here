@@ -1,0 +1,133 @@
+{
+  "date": "2026-10-25",
+  "status": "LEAD_PROPOSED_IMPLEMENTATION_AMENDMENT_NOT_APPLIED_TO_PNG",
+  "source_pngs_unchanged": true,
+  "new_features": [],
+  "changes": [
+    {
+      "id": "UX01",
+      "priority": "P1",
+      "views": [
+        "M09",
+        "M10",
+        "M14",
+        "D03",
+        "D04",
+        "D05",
+        "D06",
+        "D07"
+      ],
+      "copy_replacements": {
+        "The model did not recover the access note.": "The AI check could not read the wheelchair pickup note.",
+        "Image readback": "AI read from the sign",
+        "Current run history": "Changes made",
+        "This notice’s history": "Changes made",
+        "Confirmed value": "Your details",
+        "Content & conditions": "Important details and conditions",
+        "A model readback, not a human comprehension test.": "This checks AI reading. It does not show how people will read the sign."
+      },
+      "rules": [
+        "Failure text names the actual failed detail.",
+        "Counters and history come from real events.",
+        "No global proof or readability guarantee."
+      ]
+    },
+    {
+      "id": "UX02",
+      "priority": "P1",
+      "views": [
+        "M12",
+        "M13",
+        "M15"
+      ],
+      "rules": [
+        "Add quiet New notice header link to M12 and M13.",
+        "New notice opens existing M17 guard.",
+        "Return from M15 restores the actual opener and exposes that header link."
+      ]
+    },
+    {
+      "id": "UX03",
+      "priority": "P1",
+      "views": [
+        "M01",
+        "M02",
+        "D01"
+      ],
+      "copy_replacements": {
+        "Add a photo. Keep the important details.": "Turn a notice into a clear A3 sign.",
+        "Target viewing distance": "How far away will people read it?",
+        "Read notice": "Find key details"
+      },
+      "rules": [
+        "Replace copy in existing positions; do not add a new explanatory panel.",
+        "1m/3m/5m, default 3m; target distance remains a design input."
+      ]
+    },
+    {
+      "id": "UX04",
+      "priority": "P1",
+      "views": [
+        "M06",
+        "M07",
+        "D02"
+      ],
+      "copy_replacements": {
+        "Save changes": "Confirm time",
+        "Meaning / From this time": "Pickup starts at this time"
+      },
+      "helper": "Enter a confirmed time. If you do not know it, use a clearer photo.",
+      "rules": [
+        "Never insert an example time into an unknown fact.",
+        "Known fact editing uses contextual Save changes or Confirm [field].",
+        "Permit return to source replacement without guessing.",
+        "Not stated and unreadable are separate source states."
+      ]
+    },
+    {
+      "id": "UX05",
+      "priority": "P1",
+      "views": "ALL",
+      "runtime_gates": {
+        "body_and_input_px_min": 16,
+        "labels_and_help_px_min": 14,
+        "preferred_touch_target_px": 44,
+        "viewports_px": [
+          320,
+          390,
+          768,
+          1024,
+          1440
+        ],
+        "text_zoom_percent": 200
+      },
+      "rules": [
+        "Visible icon size is separate from its hit area.",
+        "Allow vertical scrolling and keyboard-safe editing.",
+        "Use exact A3 and one actual SVG artifact for all previews and exports."
+      ]
+    },
+    {
+      "id": "UX06",
+      "priority": "P2",
+      "views": [
+        "M10",
+        "M12",
+        "M16",
+        "D04",
+        "D05",
+        "D07"
+      ],
+      "copy_replacements": {
+        "Download SVG": "Download editable SVG",
+        "Download unchecked SVG": "Download draft SVG (unchecked)",
+        "Review details": "Review confirmed details"
+      },
+      "rules": [
+        "Review confirmed details applies to quality-stop action returning to facts.",
+        "Draft download stays unchecked and returns to its failed run.",
+        "Do not duplicate the primary PDF action."
+      ]
+    }
+  ]
+}

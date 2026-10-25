@@ -91,8 +91,9 @@ Bind exports/checks to a fact-version and SVG hash. PDF uses the same SVG and
 fonts, page A3, zero outer margin, preferCSSPageSize and printBackground. pdf-lib
 normalizes Chromium's rounded page dimensions to exactly 297 × 420 mm.
 Successful export is file preparation/download-started, not device-save evidence.
-Transient jobs and images live in server memory and expire after 60 inactive
-minutes. Restarting the server clears them. Original uploaded data is never committed.
+Transient jobs and images live in server memory. Jobs more than 60 minutes old
+expire during a cleanup sweep when no task is running. Restarting the server
+clears them. Original uploaded data is never committed.
 
 ### Memory exercise
 Implements `prd.md > Details and optional memory exercise`.
