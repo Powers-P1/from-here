@@ -1,6 +1,17 @@
 # Release verification
 
-Date: 25 October 2026. Application source checkpoint: `72e5571` (documentation and packaging follow it). The recording shows the same default local-model pipeline and interface.
+Date: 25 October 2026. The original local-model recording uses source checkpoint `72e5571` (documentation and packaging followed it). The current configuration adds Anthropic / Claude Sonnet 5.5, with a separately verified live workflow below. The earlier recording remains explicitly local-model evidence.
+
+## Anthropic / Claude Sonnet integration
+
+The application was connected to Claude Sonnet 5.5 using a private server-side API key. Authenticated model access was checked, and both the fresh technical proof and the real application workflow passed all five fact groups with zero layout repairs. The actual UI run included author confirmation of `Child pickup`, fresh image readback, comparison, and a downloaded PDF. The reopened PDF has one page of exactly 297 × 420 mm; the expected action, entrance, qualified time and accessible-pickup instruction are present. The SVG artifact hash matches the check report.
+
+- [Actual Sonnet application workflow and receipts](evidence/sonnet-school/job.json), [interface](evidence/sonnet-school/application.jpg).
+- [Actual generated sign](evidence/sonnet-school/sign.png), [editable SVG](evidence/sonnet-school/sign.svg), [downloaded PDF](evidence/sonnet-school/sign-A3.pdf), [PDF validation](evidence/sonnet-school/pdf-validation.json).
+- Two additional fresh Sonnet source probes passed: an obscured time remains empty and unreadable and blocks design; genuinely absent library-notice audience/time/exception remain not stated.
+- The 28 offline tests pass, including authenticated image requests, fresh-message isolation, original geometry bounds, cancellation, missing credentials, refusal/truncation, official-endpoint restriction and error redaction. The production build passes. These automated tests use doubles; live Sonnet behavior is established by the separate retained real receipts above.
+
+No local inference service is needed for this cloud profile. The original local configuration and its evidence remain below. No human comprehension study or physical print-distance test is claimed.
 
 | Evidence | Result | Boundary |
 | --- | --- | --- |

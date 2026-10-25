@@ -1,0 +1,17 @@
+{
+  "pages": 1,
+  "widthMM": 297.0,
+  "heightMM": 420.0,
+  "requiredTextPresent": true,
+  "artifactHash": "970093e573757c32942876dd5f92888974583f188696e97bc340c26df573c6b0",
+  "checkedArtifactHash": "970093e573757c32942876dd5f92888974583f188696e97bc340c26df573c6b0",
+  "providers": [
+    "anthropic"
+  ],
+  "models": [
+    "claude-sonnet-5-5"
+  ],
+  "readbackMatched": 5,
+  "repairCount": 0,
+  "scope": "Actual Sonnet workflow operated through the application; synthetic school notice; PDF downloaded through UI; not a participant study."
+}

@@ -23,7 +23,7 @@ export async function extractNotice(image: Buffer, signal?: AbortSignal) {
 
 export function planLayout(facts: NoticeFacts, distance: number, previous?: LayoutPlan, issues?: string[], signal?: AbortSignal) {
   return modelJson<LayoutPlan>({ operation: previous ? 'repair_layout' : 'plan_layout',
-    system: 'You are a practical sign designer. Plan a clear A3 notice using only locked facts. You cannot rewrite facts, add arrows or invent content. Return the bounded layout JSON only.',
+    system: 'You are a practical sign designer. Plan a clear A3 notice using only locked facts. You cannot rewrite facts, add arrows or invent content. Return the bounded layout JSON only. Keep reason to one short sentence of at most 180 characters.',
     prompt: `Target viewing distance is ${distance}m; it is a design goal, not a human readability guarantee. Locked facts: ${JSON.stringify(facts)}. Choose destination emphasis when readers mainly need to find the right place, otherwise action. scale 0.8..1.15 controls primary type; exceptionScale 0.85..1.5 controls the conditional note; margin 14..22mm. Default scale1, exceptionScale1, margin18. Keep the exception clearly readable and grouped with its condition. ${previous ? `Previous plan: ${JSON.stringify(previous)}. Actual check issues: ${JSON.stringify(issues)}. Change the relevant sizing/emphasis to address those issues while retaining every fact.` : 'Choose the strongest hierarchy for these facts.'} Explain the design decision briefly in reason.`,
     schema: layoutSchema, signal, maxTokens: 500 });
 }

@@ -53,9 +53,11 @@ The public phases are `uploaded`, `reading`, `review`, `planning`, `rendering`, 
 
 Cancel aborts the active request and advances a server token; late results cannot change the job. It returns to review when facts exist, otherwise uploaded. The client independently aborts stale requests and ignores outdated responses. Modal/source/download dismissal preserves the current opener. A valid replacement is uploaded before the previous job is removed; invalid input preserves existing work.
 
-## Local model requests and isolation
+## Model requests and isolation
 
-The example routes image transcription to Ollama Qwen3-VL and structured extraction/planning/parsing to local vLLM Gemma. Ollama uses `/api/chat`; vLLM uses `/chat/completions` relative to its `/v1` base. Requests use fresh messages, JSON schemas and temperature zero. Ajv validates returned JSON. The adapter supplies no cloud credential or authorization-header integration.
+The current example routes all AI roles to Claude Sonnet 5.5 through the Anthropic Messages API. The private server-side `ANTHROPIC_API_KEY` is sent only to the official endpoint, never included in health/receipt payloads or client code. Image transcription uses PNG image content blocks; extraction, planning and readback parsing use separate requests. Structured output schemas constrain the response shape, and Ajv validates the original bounds after adapting unsupported cloud-schema constraints. Sonnet 5.5 uses `between_tools` with medium effort for these bounded, fresh requests; no unsupported sampling parameter is sent.
+
+The optional local profile routes image transcription to Ollama Qwen3-VL and structured extraction/planning/parsing to local vLLM Gemma. Ollama uses `/api/chat`; vLLM uses `/chat/completions` relative to its `/v1` base. Local requests use fresh messages, JSON schemas and temperature zero. Changing providers never bypasses validation or the final check gate. Provider errors interrupt the current step; they do not trigger an undisclosed model fallback.
 
 Source processing has two calls: the actual normalized source image becomes a literal transcript, then a text model parses that transcript. The reader treats image text as data and is told not to reconstruct obscured information.
 

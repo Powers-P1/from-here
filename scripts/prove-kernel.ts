@@ -27,7 +27,9 @@ try {
   await writeFile(resolve(out,'sign.svg'),context.sign!.svg);
   await writeFile(resolve(out,'sign.png'),context.sign!.png);
   await writeFile(resolve(out,'report.json'),JSON.stringify({
-    realLocalInference:true,
+    realInference:true,
+    realLocalInference:[...extraction.receipts,...context.receipts].every(receipt=>receipt.provider!=='anthropic'),
+    realCloudInference:[...extraction.receipts,...context.receipts].some(receipt=>receipt.provider==='anthropic'),
     sourceHash:createHash('sha256').update(image).digest('hex'),
     confirmation:'Technical proof confirms the actual extracted facts unchanged; participant interaction is not claimed.',
     extractionWasReused:process.env.USE_RECORDED_EXTRACTION==='1',

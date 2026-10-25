@@ -6,14 +6,14 @@ Upload a PNG/JPG, confirm what it says, compare the original with the generated 
 
 This repository contains a locally run prototype. A public source repository is not a hosted application.
 
-[Watch the actual application recording — 1:28](demo/FROM-HERE-demo.mp4). English UI, live local inference, disclosed recording gaps and a scripted optional memory exercise. This repository copy is for review; the Devpost-required YouTube/Vimeo link is tracked separately.
+[Watch the earlier local-model application recording — 1:28](demo/FROM-HERE-demo.mp4). English UI, live local inference, disclosed recording gaps and a scripted optional memory exercise. The current Sonnet integration has [separate live evidence](docs/release-verification.md); its narrated film is being reviewed before publication. This repository copy is for review; the Devpost-required YouTube/Vimeo link is tracked separately.
 
 ![Actual production interface and checked sign](docs/evidence/school/application.jpg)
 
 ## How the AI pipeline works
 
-1. Local Qwen3-VL transcribes the actual uploaded image.
-2. Local Gemma parses the transcription into audience, action, destination, date/time and a linked conditional instruction. Unreadable and not-stated details remain distinct.
+1. The selected vision provider transcribes the actual uploaded image. The current cloud configuration uses Claude Sonnet 5.5 through the Anthropic API.
+2. A separate request parses the transcription into audience, action, destination, date/time and a linked conditional instruction. Unreadable and not-stated details remain distinct.
 3. The author confirms or edits the facts. Unconfirmed critical details block design.
 4. The agent chooses a bounded layout; the renderer creates a real SVG and PNG and measures text fit.
 5. A fresh readback transcribes only the rendered sign image. A separate fresh parsing request receives only that transcription and neutral field instructions. Neither request receives the source, confirmed answers, previous attempts or repair feedback.
@@ -26,10 +26,10 @@ The same SVG supplies preview and export. PDF output is normalized to **297 × 4
 Requirements:
 
 - Node.js **24+**, npm and the installed Playwright Chromium browser.
-- A separately provisioned local Ollama service at `http://127.0.0.1:11434`, with `qwen3-vl:2b-instruct` available.
-- A separately provisioned local vLLM service at `http://127.0.0.1:8000/v1`, serving `gemma-4-31b-it-qat-w4a16-ct`.
+- For the current cloud configuration: an Anthropic API key with available API credit and access to Claude Sonnet 5.5.
+- Alternatively, the separately provisioned Qwen vision / Gemma text services described in [model services](docs/model-services.md).
 
-The example configuration uses CPU-only Ollama with six threads. That setting does not provision or configure the separate vLLM/Gemma service. Model weights and services are not installed by npm. Cloud providers, API-key authentication and hosted inference are not configured or verified here.
+The app runs locally with either cloud or local inference. The current example uses the Anthropic Messages API for every AI role; it needs no local model weights or inference server. Uploaded notice images and text are sent to Anthropic in this profile. Credentials stay on the application server, in `.env.local` or its process environment, and never enter the client bundle. The local profile remains available without a cloud key.
 
 See [model-service setup and tested limits](docs/model-services.md). The validated text service requires suitable GPU hardware; a CPU-only 2B configuration was tried and correctly stopped on lost information. It is not a supported shortcut.
 
@@ -41,15 +41,14 @@ npx playwright install chromium
 Copy `.env.example` to `.env.local`, preserving any existing local configuration. The app loads `.env.local`, or `.env` if the former is absent. The example selects:
 
 ```dotenv
-AI_PROVIDER=ollama
-AI_BASE_URL=http://127.0.0.1:11434
-AI_MODEL=qwen3-vl:2b-instruct
-AI_CPU_ONLY=1
-AI_CPU_THREADS=6
+ANTHROPIC_API_KEY=your_anthropic_api_key
+AI_PROVIDER=anthropic
+AI_BASE_URL=https://api.anthropic.com/v1
+AI_MODEL=claude-sonnet-5-5
 AI_TIMEOUT_MS=180000
-AI_TEXT_PROVIDER=vllm
-AI_TEXT_BASE_URL=http://127.0.0.1:8000/v1
-AI_TEXT_MODEL=gemma-4-31b-it-qat-w4a16-ct
+AI_TEXT_PROVIDER=anthropic
+AI_TEXT_BASE_URL=https://api.anthropic.com/v1
+AI_TEXT_MODEL=claude-sonnet-5-5
 PORT=4176
 ```
 
@@ -59,7 +58,7 @@ npm run dev
 
 Open [FROM HERE locally](http://127.0.0.1:4176). The server binds to `127.0.0.1` by default. [GET /api/health](http://127.0.0.1:4176/api/health) reports the app and selected provider configuration; it does not probe model readiness.
 
-On Windows, `START-FROM-HERE.cmd` installs missing npm/browser dependencies, builds a missing UI and runs the production app in its console. The local model services still need to be available. Keep that console open; Ctrl+C stops the app.
+On Windows, `START-FROM-HERE.cmd` installs missing npm/browser dependencies, builds a missing UI and runs the production app in its console. Configure `.env.local` first. Keep that console open; Ctrl+C stops the app.
 
 To serve the built UI locally:
 
@@ -95,7 +94,7 @@ npm run test:browser
 
 The headless browser suite intercepts API responses and uses repository-local recorded data in `tests/fixtures/checked-workshop/`. It needs no AI service. Passing it proves application behavior, not live extraction/readback. Screenshots, reports and traces go outside the repository to `../outputs/from-here/product-qa/browser/`.
 
-For an actual local-model kernel run using `.env.local`:
+For an actual kernel run using the providers selected in `.env.local`:
 
 ```sh
 node --env-file=.env.local --import tsx scripts/prove-kernel.ts public/samples/community-workshop.png

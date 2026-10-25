@@ -20,7 +20,8 @@ if not exist dist\index.html (
 echo.
 echo FROM HERE - open http://127.0.0.1:4176 in your browser.
 echo Keep this window open. Press Ctrl+C to stop the application.
-echo The local vision and text-model services must already be available.
+echo Configure the AI provider in .env.local before starting the application.
+echo Anthropic needs a server-side API key; the optional local profile needs model services.
 echo.
 call npm start
 if errorlevel 1 goto failed
