@@ -6,6 +6,10 @@ Upload a PNG/JPG, confirm what it says, compare the original with the generated 
 
 This repository contains a locally run prototype. A public source repository is not a hosted application.
 
+[Watch the actual application recording — 1:28](demo/FROM-HERE-demo.mp4). English UI, live local inference, disclosed recording gaps and a scripted optional memory exercise. This repository copy is for review; the Devpost-required YouTube/Vimeo link is tracked separately.
+
+![Actual production interface and checked sign](docs/evidence/school/application.jpg)
+
 ## How the AI pipeline works
 
 1. Local Qwen3-VL transcribes the actual uploaded image.

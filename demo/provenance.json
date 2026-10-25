@@ -1,0 +1,47 @@
+{
+  "capturedFrames": 169,
+  "assembledDurationSeconds": 87.601,
+  "originalElapsedSeconds": 185.323,
+  "cuts": [
+    {
+      "afterFrame": 49,
+      "originalGapSeconds": 9.415,
+      "keptSeconds": 0.75
+    },
+    {
+      "afterFrame": 108,
+      "originalGapSeconds": 25.92,
+      "keptSeconds": 0.75
+    },
+    {
+      "afterFrame": 126,
+      "originalGapSeconds": 19.264,
+      "keptSeconds": 0.75
+    },
+    {
+      "afterFrame": 136,
+      "originalGapSeconds": 35.786,
+      "keptSeconds": 0.75
+    },
+    {
+      "afterFrame": 148,
+      "originalGapSeconds": 3.565,
+      "keptSeconds": 0.75
+    },
+    {
+      "afterFrame": 156,
+      "originalGapSeconds": 9.726,
+      "keptSeconds": 0.75
+    },
+    {
+      "afterFrame": 168,
+      "originalGapSeconds": 1.5,
+      "keptSeconds": 1.5
+    }
+  ],
+  "method": "Actual production app UI captured through CUA screenshots at approximately 2 fps; encoded as 12 fps H.264. Only gaps between capture segments removed. UI/model results not substituted.",
+  "audio": "None. English application UI and visible technical disclosure.",
+  "demonstration": "School source read by local Qwen3-VL/Gemma; author-style action correction; real design/render/fresh readback; 5/5 pass; PDF download; optional scripted memory exercise (wrong then correct).",
+  "file": "FROM-HERE-demo.mp4",
+  "decodeVerified": true
+}
