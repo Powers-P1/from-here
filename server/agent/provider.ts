@@ -1,6 +1,7 @@
 import { createHash } from 'node:crypto';
 import Ajv from 'ajv';
 import type { ModelReceipt } from '../../shared/contracts.js';
+import { reservePublicAiRequest } from './budget.js';
 
 const ajv = new Ajv({ allErrors: true, strict: false });
 export class ModelError extends Error {
@@ -88,6 +89,7 @@ export async function modelJson<T>(request: ModelRequest): Promise<{ value: T; r
       chat_template_kwargs: { enable_thinking: false } };
   }
   const requestBody = JSON.stringify(body);
+  if(provider==='anthropic'&&!reservePublicAiRequest())throw new ModelError('This demo has reached its AI request limit for today. Please try again later.');
   const started = Date.now();
   let response: Response;
   try {

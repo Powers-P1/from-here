@@ -11,6 +11,7 @@ if(existsSync('.env.local'))loadEnvFile('.env.local');
 else if(existsSync('.env'))loadEnvFile('.env');
 const production=process.argv.includes('--production');
 const app=express();const http=createServer(app);
+if(process.env.TRUST_PROXY==='1')app.set('trust proxy',1);
 app.disable('x-powered-by');app.use('/api',apiRouter());
 let vite:{close:()=>Promise<void>}|undefined;
 if(production){

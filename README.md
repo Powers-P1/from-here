@@ -4,7 +4,7 @@ Turn a dense English notice photo into a clearer A3 sign while keeping its impor
 
 Upload a PNG/JPG, confirm what it says, compare the original with the generated sign, and download an A3 portrait PDF or editable SVG. A viewing distance of 1, 3 or 5 metres is a design input, not a readability guarantee. The default is 3 metres.
 
-This repository contains a locally run prototype. A public source repository is not a hosted application.
+This repository contains the application source and a full-server hosting package. See [public deployment](docs/deployment.md) for Docker/Render setup and its verification boundaries. A public source repository by itself is not a hosted application.
 
 [Watch the earlier local-model application recording — 1:28](demo/FROM-HERE-demo.mp4). English UI, live local inference, disclosed recording gaps and a scripted optional memory exercise. The current Sonnet integration has [separate live evidence](docs/release-verification.md); its narrated film is being reviewed before publication. This repository copy is for review; the Devpost-required YouTube/Vimeo link is tracked separately.
 

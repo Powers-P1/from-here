@@ -5,17 +5,21 @@ import { factsSchema,type NoticeFacts } from '../shared/contracts.js';
 import { providerInfo } from './agent/provider.js';
 import { createJob,getJob,publicJob,startReading,startDesign,updateFacts,cancelJob,retryJob,removeJob,AppError } from './jobs.js';
 import { exportPdf } from './render/renderer.js';
+import { publicDemoPolicy } from './public-demo.js';
 
 const validateFacts=new Ajv({allErrors:true,strict:false}).compile(factsSchema);
 export function apiRouter(){
   const api=express.Router();
+  const publicDemo=publicDemoPolicy();
+  api.use(publicDemo.boundary);
   api.use(express.json({limit:'100kb'}));
   const upload=multer({storage:multer.memoryStorage(),limits:{fileSize:10*1024*1024,files:1,fields:2}});
   api.get('/health',(_req,res)=>res.json({ok:true,vision:providerInfo('vision'),text:providerInfo('text')}));
   api.post('/jobs',upload.single('file'),async(req,res)=>{
     if(!req.file)throw new AppError('Choose a PNG or JPG photo.');
-    const job=await createJob(req.file,req.body.distance);res.status(201).json(publicJob(job));
+    const job=await createJob(req.file,req.body.distance);publicDemo.register(job.id,res.locals.visitor);res.status(201).json(publicJob(job));
   });
+  api.use('/jobs/:id',publicDemo.authorize);
   api.get('/jobs/:id',(req,res)=>res.json(publicJob(getJob(String(req.params.id)))));
   api.get('/jobs/:id/source',(req,res)=>{const job=getJob(String(req.params.id));res.set('Cache-Control','private, max-age=3600').type(job.mime).send(job.original);});
   api.get('/jobs/:id/preview',(req,res)=>{const job=getJob(String(req.params.id));if(!job.context.sign)throw new AppError('The preview is not ready yet.',404);res.set('Cache-Control','no-store').type('png').send(job.context.sign.png);});
@@ -28,7 +32,7 @@ export function apiRouter(){
   api.post('/jobs/:id/design',(req,res)=>{const job=getJob(String(req.params.id));startDesign(job,req.body?.factsVersion);res.status(202).json(publicJob(job));});
   api.post('/jobs/:id/cancel',(req,res)=>{const job=getJob(String(req.params.id));cancelJob(job);res.json(publicJob(job));});
   api.post('/jobs/:id/retry',(req,res)=>{const job=getJob(String(req.params.id));retryJob(job);res.status(202).json(publicJob(job));});
-  api.delete('/jobs/:id',(req,res)=>{removeJob(getJob(String(req.params.id)));res.status(204).end();});
+  api.delete('/jobs/:id',(req,res)=>{const id=String(req.params.id);removeJob(getJob(id));publicDemo.remove(id);res.status(204).end();});
   api.get('/jobs/:id/download',async(req,res)=>{
     const job=getJob(String(req.params.id));const format=req.query.format;
     if(format!=='pdf'&&format!=='svg')throw new AppError('Choose PDF or SVG.');

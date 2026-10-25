@@ -42,7 +42,8 @@ export async function createJob(file:{buffer:Buffer;originalname:string},distanc
     if (!meta.width || !meta.height) throw new Error('No image dimensions');
     normalized=await image.rotate().resize({width:1400,height:1800,fit:'inside',withoutEnlargement:true}).png().toBuffer();
   } catch { throw new AppError('This photo could not be opened. Choose another PNG or JPG.'); }
-  if (jobs.size>=24) {
+  const maximumJobs=Number(process.env.MAX_JOBS||24);
+  if (jobs.size>=maximumJobs) {
     const oldest=[...jobs.values()].find(j=>!working.has(j.phase));
     if (oldest) jobs.delete(oldest.id);else throw new AppError('The app is busy with other notices. Please try again shortly.',503);
   }
@@ -65,6 +66,8 @@ export function publicJob(job:StoredJob):PublicJob {
 }
 function startTask(job:StoredJob,phase:JobPhase,work:(signal:AbortSignal,token:number)=>Promise<void>) {
   if(job.task || working.has(job.phase))return;
+  const maximumActive=Number(process.env.MAX_ACTIVE_JOBS||24);
+  if([...jobs.values()].filter(active=>active.task).length>=maximumActive)throw new AppError('The demo is busy with other notices. Your photo is kept. Please try again shortly.',503);
   job.controller=new AbortController();const controller=job.controller;const token=++job.token;
   job.phase=phase;job.error=null;job.interruptedPhase=null;
   const task=work(controller.signal,token).catch(error=>{
