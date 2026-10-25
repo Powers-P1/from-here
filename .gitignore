@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.env
+.env.*
+!.env.example
+/devpost/learner-profile.md
+/.agents/
+/.claude/
+/.eve/
+/.data/
+/test-results/
+/playwright-report/
+*.log
+.DS_Store
