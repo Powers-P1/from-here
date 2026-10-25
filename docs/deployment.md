@@ -1,5 +1,7 @@
 # Public deployment
 
+[Open FROM HERE](https://from-here.onrender.com/). The service is live on Render Free in Frankfurt, independent of the developer's computer. Visitors do not need an account or an API key.
+
 FROM HERE needs a Node server and Chromium for real rendering and PDF export. GitHub Pages only hosts static files, so publishing `dist/` there would leave the AI and export routes unavailable. Other projects do not occupy this repository's separate Pages slot; the runtime is the reason for using a full web-service host.
 
 ## Render package
@@ -19,8 +21,14 @@ The same configuration can be deployed manually using the public Git repository 
 
 The Free instance can sleep after fifteen minutes without traffic; its next start can take about a minute. It uses ephemeral storage. This is a hackathon demo, not an always-on production service. See [Render Free service limits](https://render.com/docs/free) and [GitHub Pages hosting](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages).
 
-## Verification before publication
+## Verification
 
 The 34 automated tests pass. The actual Docker image built successfully and rendered/exported the synthetic school sign under Linux with a 512 MB memory limit and 0.1 CPU. It ran as UID 1000 and did not contain `.env.local`. The PDF reopened as one exact 297 × 420 mm page. This container render did not make an AI call; live cloud behavior has separate evidence in `release-verification.md`.
 
-Public URL, deployment status and browser workflow checks must be verified separately after creating the hosting service. The deployment package by itself is not evidence of a live website.
+On 25 October 2026, Render deployed application commit `72c2509bc7b589e9b86ddaf57e49b85f8881f383` and reported **Live**. The public health endpoint returned the configured Anthropic provider and Claude Sonnet 5.5 model.
+
+An anonymous browser session completed the public workflow with a real file upload of the synthetic school notice, actual extraction, human confirmation and editing, redesign, fresh readback, and PDF/SVG downloads. All five Anthropic requests completed; the report matched **5 of 5** facts with zero repairs and the checked artifact hash matched the exported SVG. The downloaded PDF reopened as one exact 297 × 420 mm page and retained the audience, action, destination, date/time and wheelchair-accessible exception. PDF text extraction joins the two display lines of “East entrance”; comparison ignores whitespace when checking this phrase.
+
+The rendered interface was inspected at desktop 1440 × 1000 and mobile 390 × 844. The mobile editor and result worked without horizontal overflow; the preview image loaded and the browser recorded no warning or error messages. These are browser viewport checks, not tests on physical iOS or Android devices. A separate request without the visitor cookie could not retrieve the private source image (404).
+
+The deployment evidence, including the actual job report, exports, PDF validation and screenshots, is retained outside the public repository. Documentation-only updates after the deployed application commit do not require a service redeploy. Auto-deploy is disabled for this manual public-repository deployment.
