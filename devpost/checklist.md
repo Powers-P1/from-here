@@ -11,7 +11,7 @@ displayed plan. Mechanical verification and honest evidence remain mandatory.
 
 ## Slices
 
-- [ ] **1. A new notice becomes a real checked A3 artifact**
+- [x] **1. A new notice becomes a real checked A3 artifact**
   Becomes usable: A runnable core proof takes a new notice image through real model extraction, confirmed facts, AI layout, actual render, isolated image read and reopened PDF.
   Why now: Proves the kernel and local vision/export uncertainty before the complete UI.
   PRD ref: `prd.md > Design, check and repair`, `Compare and export`
@@ -71,3 +71,9 @@ Reflection: Not supplied.
 Activity mode: Autonomous execution requested; reference route and concise explanation will accompany the product.
 
 ## Revisions
+- The existing local vLLM Gemma endpoint returned an actual HTTP 400 saying the model is not multimodal. The adapter therefore defaults to the installed Ollama Qwen3-VL model. CPU execution is the conservative default while the shared GPU is occupied; no other model or process was stopped.
+- The small vision model transcribed the new notice correctly but misclassified a readable exception in a complex nested response. Split image transcription (existing Qwen3-VL) from structured interpretation and layout (existing text-only Gemma service). Readback still begins from the actual sign image with no source, answers or prior feedback. This is live local inference, not a seeded answer.
+- Slice 1 verified on 25 October 2026: actual workshop extraction/design/readback passed; actual school UI journey passed 5/5 with zero repairs. Both exported PDFs reopen as one exact 297 × 420 mm page. Evidence is retained separately from mocked browser tests. Twenty offline contract/API/pipeline/provider/real-renderer tests pass.
+- A real Gemma JSON whitespace loop interrupted school readback. A discriminator-first exception schema and compact-JSON instruction resolved that observed failure without accepting incomplete data. Actual unclear-time and absent-field source probes passed again after this change.
+- Independent review exposed numeric-range/date-range/time normalization errors; regression tests now retain complete ranges and never infer AM/PM. Identified codes, URLs and marked literals also retain case instead of receiving the ordinary heading-capital style.
+- Real glyph ink bounds replaced SVG em-cell bounds; the original measurement produced false margin failures. PDF page dimensions are normalized after Chromium rounding, then checked by reopening the resulting file.

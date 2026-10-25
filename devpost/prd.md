@@ -107,6 +107,7 @@ Human-readability certification, a full design editor, made-up outcome metrics,
 or static screenshots substituted for application controls.
 
 ## Open Questions
-Local vision-model quality and latency will be tested in the first slice.
+Local vision and text models have passed actual source/render/readback/export
+proofs, including an unreadable-time source and a source with genuinely absent fields.
 Actual user sessions and physical A3 testing are not yet performed; record
 their availability and actual outcomes rather than infer them from agent review.
