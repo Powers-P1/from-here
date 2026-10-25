@@ -34,10 +34,11 @@ export function App() {
 
   useEffect(() => () => { ++downloadId.current; downloadController.current?.abort(); }, []);
   useEffect(() => {
+    if (walkthrough.enabled) return;
     const heading = document.querySelector<HTMLElement>('main h1');
     window.scrollTo({ top: 0, behavior: 'instant' });
     if (view !== 'upload') heading?.focus({ preventScroll: true });
-  }, [view]);
+  }, [view, walkthrough.enabled]);
 
   const download = async (format: 'pdf' | 'svg', draft = false) => {
     if (!job) return;

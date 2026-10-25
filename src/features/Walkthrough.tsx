@@ -1,4 +1,4 @@
-import { useEffect, useId, useRef } from 'react';
+import { useEffect, useId, useLayoutEffect, useRef } from 'react';
 import type { JobPhase } from '../../shared/contracts';
 import type { MainView } from '../workflow/reducer';
 import { useWalkthroughTarget } from './useWalkthroughTarget';
@@ -21,14 +21,11 @@ export function Walkthrough({ step, onExit, view, phase, blocked, tab }: { step:
   const [title, task] = phase === 'interrupted' ? ['Reconnect to continue.', 'Use Try again to resume. Your notice and details are kept; an interrupted run does not complete this step.']
     : phase === 'stopped' ? ['Review the check.', 'Automatic checks did not pass. Review the confirmed details or choose a clearer photo. An unchecked draft does not complete this walkthrough.']
     : working ? [phase === 'reading' ? 'Reading the actual photo.' : 'Checking the new sign.', 'Wait for the real AI run to finish. A failed or interrupted check will not complete this step.'] : steps[step];
-  useEffect(() => {
-    const frame = requestAnimationFrame(() => {
-      if (document.querySelector('dialog[open]')) return;
-      heading.current?.focus({ preventScroll: true });
-      heading.current?.closest('aside')?.scrollIntoView({ block: 'nearest', behavior: 'instant' });
-    });
-    return () => cancelAnimationFrame(frame);
-  }, [step]);
+  useLayoutEffect(() => {
+    if (document.querySelector('dialog[open]')) return;
+    heading.current?.focus({ preventScroll: true });
+    heading.current?.closest('aside')?.scrollIntoView({ block: 'nearest', behavior: 'instant' });
+  }, [step, view]);
   useEffect(() => {
     const escape = (event: KeyboardEvent) => {
       if (event.key !== 'Escape' || event.defaultPrevented || event.isComposing || document.querySelector('dialog[open]')) return;
