@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import type { PublicJob } from '../../shared/contracts';
 import type { WorkflowState } from '../workflow/reducer';
 import { guideArtifactKey, guideObjective } from './guide-objectives';
@@ -17,11 +17,17 @@ export function useWalkthrough(state: WorkflowState) {
     artifactHash: job?.artifactHash ?? null, checkedArtifactHash: job?.report?.checkedArtifactHash ?? null,
     passed: job?.report?.passed === true, checksInspectedFor, pdfDownloadedFor,
   });
-  const exit = () => {
+  const exit = useCallback(() => {
+    const target = document.querySelector<HTMLElement>('[data-walkthrough-current="true"]');
     setEnabled(false);
     const url = new URL(window.location.href); url.searchParams.delete('walkthrough');
     window.history.replaceState(window.history.state, '', url.pathname + url.search + url.hash);
-  };
+    requestAnimationFrame(() => {
+      const next = target?.isConnected && !target.matches(':disabled') ? target : document.querySelector<HTMLElement>('#main-content h1');
+      next?.focus({ preventScroll: true });
+      next?.scrollIntoView({ block: 'nearest', behavior: 'instant' });
+    });
+  }, []);
   return {
     enabled, step, exit,
     inspectChecks: () => { if (enabled) setChecksInspectedFor(checkedKey(job)); },

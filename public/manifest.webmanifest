@@ -1,0 +1,18 @@
+{
+  "id": "/",
+  "name": "FROM HERE — A clearer sign",
+  "short_name": "FROM HERE",
+  "description": "Turn an English notice into a checked A3 sign. AI and export require internet.",
+  "lang": "en",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#FFFFFF",
+  "prefer_related_applications": false,
+  "icons": [
+    { "src": "/brand/app-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/brand/app-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/brand/app-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

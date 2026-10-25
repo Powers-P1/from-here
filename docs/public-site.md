@@ -12,11 +12,17 @@ The jury and guide pages state prominently that the first app launch may take ab
 
 ## Outcome-based walkthrough
 
-Opening the application with `?walkthrough=1` enables an optional in-flow coach. It never covers controls, clicks for the visitor or advances on a timer. There is no Next button. Exit removes the query parameter and leaves the current work intact.
+Opening the application with `?walkthrough=1` enables an optional in-flow coach. It never covers controls, clicks for the visitor or advances on a timer. There is no Next button. Show me where focuses the actual highlighted control, including the correct mobile or desktop version. Exit or Esc removes the query parameter and leaves the current work intact; an open dialog handles Esc first. Exit restores focus to a useful control or the current heading. The app also has a keyboard skip-link and an Anthropic/privacy notice beside upload and reading.
 
 Progress requires five actual outcomes: a successful upload; extracted facts; a passed report bound to the current artwork hash; opening the current result's checks; and starting a successful checked-PDF download. Inspection/export proof is bound to both job ID and artifact hash, so an older job or revised artwork cannot satisfy the new walkthrough. Reading, interruption and stopped checks cannot count as success. Browser download initiation is not a claim that the visitor has opened the file or printed it.
 
 `tests/guide-objectives.test.ts` covers failed/interrupted states, mismatched hashes, downloads before inspection, and stale job/artifact proof. The ordinary app remains available without the guide. AI checks still do not certify human readability or accessibility.
+
+## Optional online PWA
+
+The app origin serves a standalone web-app manifest, real 192/512px icons, a maskable icon and an Apple touch icon. A dismissible mobile invitation offers platform-specific steps; installation help can be reopened after dismissal. A native browser install prompt is used only when the browser provides it and the user asks. Safari/iOS gets Share-menu instructions. Installed display mode hides the invitation.
+
+This PWA is an online application. It adds no offline project store, service-worker cache or offline AI claim. AI and export need internet; jobs remain temporary and the Render cold start remains possible. Service workers are not a prerequisite for current installability; see [MDN installation requirements](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Guides/Making_PWAs_installable). No operating-system installation was performed during agent QA.
 
 ## Build and publishing
 

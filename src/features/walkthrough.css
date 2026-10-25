@@ -3,4 +3,11 @@
 .walkthrough-top .text-button { font-size: 15px; flex-shrink: 0; }
 .walkthrough h2 { margin: 4px 0 7px; font-size: 23px; }
 .walkthrough p { font-size: 16px; line-height: 1.45; max-width: 750px; }
+.walkthrough h2:focus { outline: none; }
+.walkthrough-target-link { font-size: 16px; margin-top: 5px; }
+#main-content [data-walkthrough-current="true"] { outline: 3px solid var(--blue); outline-offset: 4px; box-shadow: 0 0 0 7px #F1E36A70; scroll-margin-block: 28px; }
+.privacy-note { font-size: 14px; color: var(--muted); line-height: 1.45; margin-top: 16px; max-width: 520px; }
+.app-skip-link { position: absolute; top: -100px; left: 19px; z-index: 20; background: var(--yellow); color: var(--ink); padding: 12px 18px; }
+.app-skip-link:focus { top: 12px; }
+#main-content:focus { outline: none; }
 @media (min-width: 900px) { .walkthrough { margin-bottom: 36px; padding: 9px 22px 18px; } .walkthrough h2 { font-size: 26px; } .walkthrough p { font-size: 18px; } }

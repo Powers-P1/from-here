@@ -13,6 +13,7 @@ import { SourceViewer } from './features/SourceViewer';
 import { Glance } from './features/Glance';
 import { Walkthrough } from './features/Walkthrough';
 import { useWalkthrough } from './features/useWalkthrough';
+import { InstallApp } from './pwa/InstallApp';
 
 export function App() {
   const workflow = useWorkflow();
@@ -75,16 +76,18 @@ export function App() {
   const editorOverlay = overlay?.kind === 'edit' ? overlay : overlay?.kind === 'reset' && overlay.opener?.kind === 'edit' ? overlay.opener : null;
 
   return <div className="app-shell">
+    {view !== 'glance' ? <a className="app-skip-link" href="#main-content">Skip to content</a> : null}
     {view === 'glance' && job ? <Glance job={job} priorAttempt={glanceAttempts.current.has(job.id)} onStart={() => glanceAttempts.current.add(job.id)} onResult={() => dispatch({ type: 'VIEW', view: 'result' })} /> : <>
       <Header onBack={job || state.fileIssue ? back : undefined} onNew={showNew ? newNotice : undefined} homeHref={!job ? 'https://powers-p1.github.io/from-here/' : undefined} />
-      {walkthrough.enabled ? <Walkthrough step={walkthrough.step} onExit={walkthrough.exit} /> : null}
-      <main id="main-content">
+      {walkthrough.enabled ? <Walkthrough step={walkthrough.step} onExit={walkthrough.exit} view={view} phase={state.connectionError ? 'interrupted' : job?.phase} blocked={Boolean(overlay) || state.sourceOpen || Boolean(state.pending)} tab={state.tab} /> : null}
+      <main id="main-content" tabIndex={-1}>
         {view === 'upload' ? <Upload job={job} distance={state.distance} pending={state.pending} issue={state.fileIssue} error={state.error} onFile={workflow.selectFile} onSample={workflow.loadSample} onRead={() => void act('read')} onDistance={distance => dispatch({ type: 'DISTANCE', distance })} onClearIssue={() => dispatch({ type: 'FILE_ISSUE', issue: null })} onSource={source} /> : null}
         {view === 'facts' && job?.facts ? <Facts job={job} pending={Boolean(state.pending)} error={state.error} onEdit={field => dispatch({ type: 'OVERLAY', overlay: { kind: 'edit', field } })} onDesign={() => void act('design')} onSource={source} onReplace={replace} onSave={workflow.saveFacts} /> : null}
         {view === 'progress' && job ? <Progress job={job} pending={Boolean(state.pending)} connectionError={state.connectionError} error={state.error} onCancel={() => void act('cancel')} onRetry={() => void act('retry')} onReview={() => void review()} onDraft={() => void download('svg', true)} onSource={source} onReplace={replace} /> : null}
         {view === 'result' && job ? <Result job={job} tab={state.tab} pending={Boolean(state.pending)} onTab={tab => dispatch({ type: 'TAB', tab })} onDownload={download} onDetails={() => { walkthrough.inspectChecks(); dispatch({ type: 'VIEW', view: 'checks' }); }} onSource={source} /> : null}
         {view === 'checks' && job ? <Checks job={job} onResult={() => dispatch({ type: 'VIEW', view: 'result' })} onGlance={() => dispatch({ type: 'VIEW', view: 'glance' })} onDownload={() => void download('pdf')} /> : null}
       </main>
+      {view === 'upload' && !job ? <InstallApp /> : null}
     </>}
     <input type="file" ref={fileInput} hidden aria-hidden="true" data-testid="replacement-file-input" tabIndex={-1} accept="image/png,image/jpeg,.png,.jpg,.jpeg" onChange={event => { const file = event.target.files?.[0]; event.target.value = ''; if (file) void workflow.selectFile(file); }} />
     {editorOverlay && job ? <EditFact key={`${job.id}-${editorOverlay.field}`} job={job} field={editorOverlay.field} pending={Boolean(state.pending)} error={state.error} onSave={workflow.saveFacts} onClose={closeOverlay} onSource={source} onReplace={replace} /> : null}

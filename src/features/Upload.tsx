@@ -25,7 +25,7 @@ export function Upload({ job, distance, pending, issue, error, onFile, onSample,
   if (issue) return <section data-view="M03" className="rejected-view">
     {fileInput}<Heading title="Choose a photo instead." />
     <div className="rejected-file"><FileText aria-hidden="true" /><span>{issue.name}</span></div>
-    <ErrorMessage>{issue.message}</ErrorMessage><Button onClick={choose} disabled={Boolean(pending)}>Choose another file</Button>
+    <ErrorMessage>{issue.message}</ErrorMessage><Button data-guide-target="upload" onClick={choose} disabled={Boolean(pending)}>Choose another file</Button>
     <TextButton onClick={onClearIssue}>Back</TextButton>
   </section>;
 
@@ -44,8 +44,9 @@ export function Upload({ job, distance, pending, issue, error, onFile, onSample,
           <input type="radio" name="distance" checked={distance === value} value={value} onChange={() => onDistance(value)} disabled={Boolean(pending)} /><span>{value} m</span>
         </label>)}</div></fieldset>
         <ErrorMessage>{error}</ErrorMessage>
-        <Button icon="arrow" onClick={job ? onRead : choose} disabled={Boolean(pending)}>{pending ? 'Opening your photo…' : job ? 'Find key details' : 'Choose photo'}</Button>
-        {!job ? <TextButton className="center-link" onClick={onSample} disabled={Boolean(pending)}>Use sample notice</TextButton> : null}
+        <Button data-guide-target={job ? 'read' : 'upload'} icon="arrow" onClick={job ? onRead : choose} disabled={Boolean(pending)}>{pending ? 'Opening your photo…' : job ? 'Find key details' : 'Choose photo'}</Button>
+        {!job ? <TextButton data-guide-target="sample" className="center-link" onClick={onSample} disabled={Boolean(pending)}>Use sample notice</TextButton> : null}
+        <p className="privacy-note">AI processing sends this photo and text to Anthropic. Jobs are temporary. <a href="https://powers-p1.github.io/from-here/privacy/" target="_blank" rel="noopener">Privacy &amp; limits<span className="sr-only"> (opens a new tab)</span></a></p>
       </div>
     </div>
   </section>;

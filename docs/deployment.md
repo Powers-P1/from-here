@@ -25,7 +25,7 @@ The Free instance can sleep after fifteen minutes without traffic; its next star
 
 ## Verification
 
-The initial hosting package passed 34 automated tests; the product-site and walkthrough update passes 36. The actual Docker image built successfully and rendered/exported the synthetic school sign under Linux with a 512 MB memory limit and 0.1 CPU. It ran as UID 1000 and did not contain `.env.local`. The PDF reopened as one exact 297 × 420 mm page. This container render did not make an AI call; live cloud behavior has separate evidence in `release-verification.md`.
+The initial hosting package passed 34 automated tests; the product-site and walkthrough update passed 36; the mentor fixes pass 38. The actual Docker image built successfully and rendered/exported the synthetic school sign under Linux with a 512 MB memory limit and 0.1 CPU. It ran as UID 1000 and did not contain `.env.local`. The PDF reopened as one exact 297 × 420 mm page. This container render did not make an AI call; live cloud behavior has separate evidence in `release-verification.md`.
 
 On 25 October 2026, Render deployed application commit `72c2509bc7b589e9b86ddaf57e49b85f8881f383` and reported **Live**. The public health endpoint returned the configured Anthropic provider and Claude Sonnet 5.5 model.
 

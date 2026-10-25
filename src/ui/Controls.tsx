@@ -43,8 +43,8 @@ export function Step({ status, children }: { status: 'complete' | 'active' | 'wa
 
 export function ErrorMessage({ children }: { children?: ReactNode }) { return children ? <p className="error-message" role="alert">{children}</p> : null; }
 
-export function BackLink({ children, onClick }: { children: ReactNode; onClick: () => void }) {
-  return <TextButton className="back-link" onClick={onClick}><ArrowLeft aria-hidden="true" />{children}</TextButton>;
+export function BackLink({ children, onClick, guideTarget }: { children: ReactNode; onClick: () => void; guideTarget?: string }) {
+  return <TextButton data-guide-target={guideTarget} className="back-link" onClick={onClick}><ArrowLeft aria-hidden="true" />{children}</TextButton>;
 }
 
 export function Modal({ children, title, onDismiss, sheet = false, fullscreen = false, view, className = '' }: { children: ReactNode; title: string; onDismiss: () => void; sheet?: boolean; fullscreen?: boolean; view?: string; className?: string }) {
