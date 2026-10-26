@@ -12,13 +12,13 @@ Checked on 26 October 2026 against the [Official Rules](https://learn-ai-basics.
 
 ## Service continuity
 
-Leave the Render Free service, private Anthropic secret, GitHub Pages and public YouTube film enabled. Do not rotate/revoke the service key or archive the repository while judging. The live app is application commit `4db737095604aa738e12cfb3c6918df26899d71c`; site-only updates do not need an app restart. The free host's cold start remains disclosed. No keepalive bypass or paid upgrade is required.
+Leave the Render Free service, private Anthropic secret, GitHub Pages and public YouTube film enabled. Do not rotate/revoke the service key or archive the repository while judging. The current app/site follow-up is commit `7366480a7a775017e86178c149360d82011054e8`. It adds the native jury film, presentation details and an upload-requirements sentence; the AI/render/export behavior is unchanged from independently verified application commit `4db737095604aa738e12cfb3c6918df26899d71c`. Site-only updates do not need an app restart. The free host's cold start remains disclosed. No keepalive bypass or paid upgrade is required.
 
-The app has two concurrent AI workflows, upload/action limits and a best-effort 200-request daily brake. These are demo safeguards, not a provider spending cap; the counter resets on restart. The API account still needs available credit. A past successful call does not promise future balance, uptime or model availability.
+The app has two concurrent AI workflows, upload/action limits and a best-effort 200-request daily brake. These are demo safeguards, not a provider spending cap; the counter resets on restart. Available API promotional credit in the intended Individual Org was checked on 26 October, with an expiry later than judging. Private account amounts are retained outside the public source. A point-in-time balance or past successful call does not promise future credit, uptime or model availability.
 
 If the app cannot process a notice, the jury page retains the clearly labelled saved output, downloadable A3 example, narrated recording, source and run receipts. This is recorded evidence, not a simulated live success. A new visitor can retry the live guide after the provider recovers. The repository README describes cloud and previously verified local setup.
 
-GitHub Pages can be rolled back by reverting the site commit and rerunning its Pages workflow. Render can redeploy the known application commit above. A backend restart removes temporary jobs, so avoid redeploying it for presentation changes.
+GitHub Pages can be rolled back by reverting the site commit and rerunning its Pages workflow. Render can redeploy the known earlier `4db7370` application commit above. A backend restart removes temporary jobs, so avoid redeploying it for presentation changes.
 
 ## Cost and business boundaries
 

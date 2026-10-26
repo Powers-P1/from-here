@@ -34,3 +34,9 @@ An anonymous browser session completed the public workflow with a real file uplo
 The rendered interface was inspected at desktop 1440 × 1000 and mobile 390 × 844. The mobile editor and result worked without horizontal overflow; the preview image loaded and the browser recorded no warning or error messages. These are browser viewport checks, not tests on physical iOS or Android devices. A separate request without the visitor cookie could not retrieve the private source image (404).
 
 The deployment evidence, including the actual job report, exports, PDF validation and screenshots, is retained outside the public repository. Documentation-only updates after the deployed application commit do not require a service redeploy. Auto-deploy is disabled for this manual public-repository deployment.
+
+## Checklist follow-up, 26 October 2026
+
+Render reported commit `7366480a7a775017e86178c149360d82011054e8` **Live**, deployment `dep-dbfb33qvcj2c73ffn44g`. The app change is the visible English PNG/JPG / 10 MB sentence before file selection; AI/render/export behavior is unchanged. The new release has 43 passing automated tests, including five targeted readback/export regressions, and a passing production build. A fresh public browser upload of the sample reached Find key details without an AI call.
+
+GitHub Pages run `40255921829` successfully published the same follow-up. Six public pages and the film resources returned HTTP 200 without cookies/authorization. The final narrated MP4 supports HTTP 206 byte ranges. Public CUA playback, pause and seek were verified with audio unmuted, no media error and one burned caption layer; the page contained no YouTube iframe. Desktop 1440 × 1000 and mobile 390 × 844 checks showed no page overflow in inspected states, and the checked browser logs had no warnings/errors. These checks do not claim subjective listening or physical-phone testing. See [judging and handoff](operating-plan.md).
