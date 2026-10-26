@@ -41,7 +41,7 @@ displayed plan. Mechanical verification and honest evidence remain mandatory.
   Learner check: Try a bad file, cancel and retry a task, start another notice and run the memory exercise.
   Commit: `Complete recovery and optional memory flow`
 
-- [ ] **4. The release can be reproduced and shown for submission**
+- [x] **4. The release can be reproduced and shown for submission**
   Becomes usable: Clean build, tested instructions, license/assets, genuine demo recording and complete technical handoff.
   Why now: Publishes evidence of the actual product after release QA.
   PRD ref: `prd.md > What We're Building`, `Non-Goals`
@@ -57,7 +57,7 @@ displayed plan. Mechanical verification and honest evidence remain mandatory.
 
 ## Final Review
 - [ ] All mechanical release checks and visual fidelity comparison passed.
-- [ ] Final review complete — feedback resolved and learner confirms ready to ship.
+- [x] Final review complete — feedback resolved and learner confirms ready to ship.
 
 ## Code Tour and App Map
 - [ ] Learning activity complete — actual route/recap or connected practice, with evidence.
@@ -84,3 +84,4 @@ Activity mode: Autonomous execution requested; reference route and concise expla
 - Browser fixture outputs now live under tests/fixtures/checked-workshop with provenance, so a fresh clone can run interaction tests without external QA files or a model. Their reused source extraction remains labeled. QA output paths/base URL can be overridden for a separate production run.
 - Release mechanics verified: the production build and all 38 current automated tests pass. The mentor independently completed the live public AI workflow, 5/5 checks and an actual A3 PDF download. The narrated 93-second film v3 is public at https://www.youtube.com/watch?v=x2jaGNFlA4I after explicit publication and upload-terms approval; English captions were published and browser playback checked. Participant form answers, hands-on exploration and submission are not invented.
 - One all-2B CPU experiment completed but correctly stopped at 2/5 readback after two repairs. It is rejected as a supported minimum. The default verified Qwen/Gemma setup is retained and its external model-host requirements are documented.
+- Release and submission completed on 26 October 2026: the participant supplied/corrected personal questionnaire answers and explicitly approved the final eligibility statements, terms and sending. Devpost displayed “Project submitted!” for https://devpost.com/software/from-here . The release includes the public repository, planning documents, live app, narrated film, dedicated cover and three captioned evidence images. Unperformed participant hands-on and learning activities above remain unchecked.

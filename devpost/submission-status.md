@@ -1,14 +1,17 @@
 # Submission status
 
-Technical handoff for FROM HERE. This is not participant-authored submission prose or a claim of submission.
+**SUBMITTED on 26 October 2026.** Devpost displayed “Project submitted!” and the public project changed to “SUBMITTED TO — Build With AI: Basics”. The entry was sent after the participant explicitly confirmed eligibility, accepted the Official Rules and Devpost Terms of Service, and authorized submission.
+
+Public entry: https://devpost.com/software/from-here . Hackathon submission ID: `1264548`; portfolio project ID: `1510075`.
 
 Public product entry: https://powers-p1.github.io/from-here/ . The [jury page](https://powers-p1.github.io/from-here/jury/) includes the first-launch explanation, live walkthrough entry, source and verification links. Organisation, reader, guide and privacy pages are published alongside it. The real guided public workflow, including a checked A3 PDF download, was independently verified by the WearAgain/Tour Rescue mentor after deploying application commit `4db7370`. The build and all 38 automated tests passed.
 
 - Application: live at https://from-here.onrender.com/ on Render Free, with verified Claude Sonnet 5.5 inference, anonymous use and PDF/SVG export. The public workflow was checked in desktop and mobile browser viewports. No visitor installation, login or API key is needed. The host may take about a minute to wake after inactivity; jobs are temporary. The server key is private. The local build and previously validated optional local model profile remain available through `README.md`.
 - Source: reviewed code, 32 approved reference images, synthetic examples, setup instructions, MIT license and third-party notices are published at https://github.com/Powers-P1/from-here . The repository and README were checked without authentication (HTTP 200).
 - Video: the 93-second narrated Sonnet film, revision 3, is public at https://www.youtube.com/watch?v=x2jaGNFlA4I . The participant approved publication and explicitly accepted YouTube's upload terms on 26 October 2026. YouTube confirmed publication and no copyright-check problems at that time; English SRT captions were published and AI content disclosed. Playback was verified in a browser. The earlier 87.58-second local-model recording remains in the repository as a historical reference. No personal learning account is invented.
-- Devpost project answers, short description and exit survey: participant authorship required; not supplied or submitted by the agent.
-- Participant hands-on exploration: not inferred from agent tests.
-- Submission confirmation: not received; the entry is not recorded as submitted.
+- Presentation: a concise project story starts with the two-entrance example and the condition that changes the instruction. The “KEEP THE EXCEPTION” cover and three captioned images show actual generated output, the desktop result and mobile checks. The public video is embedded. The story includes the participant's account of moving from weeks of polishing earlier projects to an approximately 48-hour deadline.
+- Participant questionnaire: the participant supplied or corrected personal responses, then approved the final entry. The technical-requirement answer was shortened to the form's actual 255-character server limit without changing its facts. Agent QA remains distinct from participant hands-on exploration.
+- Categories: the current Official Rules provide First, Second and Third Place, plus participation recognition for eligible submissions. There are no additional tracks or sponsor categories to select. Each project can receive one main prize and one participation prize.
+- Confirmation: the actual Devpost success message and “SUBMITTED TO” state were observed and retained locally. This records successful submission, not an organizer eligibility decision or a prize result.
 
 The verified competition deadline is 26 October 2026, 17:00 EDT (22:00 Europe/Warsaw). Required public repository and short accessible YouTube/Vimeo video must be available when submitting. Hosting the app is optional. Check the [official rules](https://learn-ai-basics.devpost.com/rules) and the actual form before submission.

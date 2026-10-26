@@ -50,6 +50,6 @@ The offline app-map file was inspected and its source paths checked. Its browser
 
 An all-2B CPU profile was tested once and rejected after an honest 2/5 readback stop and two repairs. The verified default remains the separate local Qwen vision / GPU-backed Gemma text setup; see `model-services.md`.
 
-Publishing a repository or video does not submit an entry. The participant supplies their own Devpost answers and exit survey and confirms the final submission. See `devpost/submission-status.md` for the actual external-link status.
+Devpost confirmed the FROM HERE entry on 26 October 2026 with “Project submitted!” and a “SUBMITTED TO — Build With AI: Basics” state at https://devpost.com/software/from-here . The participant supplied or corrected personal questionnaire responses and explicitly approved the eligibility statements, final terms and submission. See `devpost/submission-status.md` for the receipt details and public links.
 
 The public repository is https://github.com/Powers-P1/from-here . Anonymous repository metadata and raw README both returned HTTP 200. Its review recording is included under `demo/`; that does not replace the required YouTube/Vimeo publication. Personal learner context, local env files and raw user uploads are excluded.

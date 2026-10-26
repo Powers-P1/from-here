@@ -2,7 +2,7 @@
 
 Turn a dense English notice photo into a clearer A3 sign while keeping its important details and conditional instructions.
 
-[Product website](https://powers-p1.github.io/from-here/) · [For the jury](https://powers-p1.github.io/from-here/jury/) · [Open the application](https://from-here.onrender.com/)
+[Devpost submission](https://devpost.com/software/from-here) · [Product website](https://powers-p1.github.io/from-here/) · [For the jury](https://powers-p1.github.io/from-here/jury/) · [Open the application](https://from-here.onrender.com/)
 
 No installation, account or visitor API key. The responsive web app uses server-side Claude Sonnet 5.5. Its optional [guided walkthrough](https://powers-p1.github.io/from-here/guide/) follows real completed actions through the checked PDF download. The free app host may take about a minute to wake after inactivity; the static product website and saved example remain available separately. Download results before leaving because jobs are temporary.
 
