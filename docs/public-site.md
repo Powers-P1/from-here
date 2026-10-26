@@ -2,7 +2,7 @@
 
 The public entry is https://powers-p1.github.io/from-here/ with separate pages for organisations, readers, the guide, jury evaluation and privacy/limits. GitHub Pages serves these static pages. Render continues to serve the working application at https://from-here.onrender.com/ . The app header links back to the product home before an upload.
 
-The site reuses the approved wordmark, fonts and palette. Its before/after example uses the repository's synthetic school input and the exact SVG/PDF from the verified public Sonnet run. It is labelled as saved example output. It is not presented as a fresh result for the next visitor. The home and jury pages link to the narrated film on YouTube. Raw licensed audio and private production files are not included in this website.
+The site reuses the approved wordmark, fonts and palette. Its before/after example uses the repository's synthetic school input and the exact SVG/PDF from the verified public Sonnet run. It is labelled as saved example output. It is not presented as a fresh result for the next visitor. The jury page has the actual narrated film in a native player, with YouTube as an alternative. Raw licensed audio and private production files are not included in this website.
 
 The organisation page covers schools, shops, venues and public-facing teams publishing notices. The reader page covers their visitors and customers reading the printed output. There is no invented marketplace, retailer connection, account system, checkout or measured commercial ROI.
 
@@ -26,7 +26,7 @@ This PWA is an online application. It adds no offline project store, service-wor
 
 ## Build and publishing
 
-Run `npm ci` and `npm run build:site`. Output is the ignored `site-dist/` directory, with a `/from-here/` URL base. `SITE_BASE_PATH` can override this for another deployment. Six static HTML pages are emitted with locally hosted fonts and explicit asset copies; there is no client framework, analytics script or embedded secret.
+Run `npm ci` and `npm run build:site`. Output is the ignored `site-dist/` directory, with a `/from-here/` URL base. `SITE_BASE_PATH` can override this for another deployment. Six static HTML pages are emitted with locally hosted fonts and explicit asset copies. A small jury-only script starts the native film on request; there is no client framework, analytics script or embedded secret.
 
 `.github/workflows/pages.yml` publishes this output on relevant main-branch changes. The Render service is updated separately through its manual deploy control. The runtime's Docker image does not need to include the static site source.
 
@@ -53,3 +53,11 @@ The 93-second narrated film is now revision 3. Its closing card links directly t
 After the participant's explicit publication approval and separate confirmation of YouTube's upload terms, revision 3 was published publicly on the Damian channel: https://www.youtube.com/watch?v=x2jaGNFlA4I . YouTube reported publication complete and no copyright-check problems at publication time. The English SRT captions were uploaded and published, and realistic illustrative AI content was disclosed. Browser playback was verified with audio unmuted; subjective listening is not claimed. The home page, jury page and README link to this film without embedding a third-party player on initial site load.
 
 The complete Devpost entry was subsequently submitted on 26 October 2026 after the participant approved the final statements and terms. Devpost displayed “Project submitted!” at https://devpost.com/software/from-here . The entry includes the film, a dedicated cover, three images of actual output and interface states, the source/demo links and the participant's questionnaire responses. No additional prize categories were available in this competition.
+
+## Checklist follow-up, 26 October 2026
+
+The jury film is now available at `/jury/#walkthrough` as a native 93-second player. Its 9.7 MB MP4 is assigned only after Play, with local poster, transcript, VTT/SRT downloads, direct MP4 and the published YouTube alternative. Captions are already burned into the unchanged final master; the player does not load a second subtitle track over them. An initial YouTube-embed candidate was replaced after independent review found overlapping player captions. With JavaScript unavailable, the external viewing link and transcript remain available.
+
+The participant's Epidemic Pro trial was checked active on publication day, ending 8 November. Official plan documentation includes websites; the finished film carries separate media rights in `site/assets/LICENSE-MEDIA.txt`. The MIT code license does not relicense its third-party audio. No raw track or private account material is published. No subscription or billing setting was changed.
+
+All pages now include local Open Graph/Twitter preview artwork and a public Contact / feedback link. The home identifies the target team and compares the bounded workflow with manual design/chat. The organisation page identifies the proposed payer, costs and a future plan as an unvalidated business hypothesis. The guide explains how to start a fresh walkthrough. [Judging and handoff](operating-plan.md) records dates, service ownership, rollback, the pitch, cost estimate from retained tokens and remaining human checks.

@@ -2,8 +2,22 @@
   <h1>Try it. Then check the evidence.</h1>
   <p class="lead">A real notice-to-sign workflow, powered by Claude Sonnet 5.5.</p>
   <div class="cold-start" id="first-launch"><h2>First launch can take about a minute.</h2><p>This demo runs on Render Free. The server sleeps after 15 minutes without activity and needs time to restart. Keep the app tab open while it wakes. The landing page and saved PDF stay available separately.</p><a class="small-link" href="https://render.com/docs/free#spinning-down-on-idle">Render’s explanation of the cold start</a></div>
-  <div class="actions"><a class="button" href="{{TOUR}}" target="_blank" rel="noopener">Start the guided walkthrough<span class="sr-only"> (opens a new tab)</span></a><a class="text-link" href="{{FILM}}" target="_blank" rel="noopener">Watch the 93-second demo<span class="sr-only"> on YouTube (opens a new tab)</span></a><a class="text-link" href="{{APP}}" target="_blank" rel="noopener">Open the app<span class="sr-only"> (opens a new tab)</span></a></div>
+  <div class="actions"><a class="button" href="{{TOUR}}" target="_blank" rel="noopener">Start the guided walkthrough<span class="sr-only"> (opens a new tab)</span></a><a class="text-link" href="#walkthrough">Watch the 93-second demo</a><a class="text-link" href="{{APP}}" target="_blank" rel="noopener">Open the app<span class="sr-only"> (opens a new tab)</span></a></div>
 </section>
+<section class="section-rule film-section" id="walkthrough" aria-labelledby="film-title">
+  <h2 id="film-title">Keep the exception.</h2>
+  <p class="film-intro">One notice. Two entrances. Watch a real photo-to-PDF workflow, with English narration and captions.</p>
+  <div class="film-frame" data-film-player data-film-src="{{BASE}}assets/FROM-HERE-jury-film-v3.mp4">
+    <button class="film-play" type="button" aria-label="Play the 93-second FROM HERE film" aria-describedby="film-privacy" hidden>
+      <img src="{{BASE}}assets/film-poster.png" width="1500" height="1000" loading="lazy" alt="">
+      <span class="film-play-label"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M8 5v14l12-7z" fill="currentColor"/></svg>Play film <span class="film-duration">1:33</span></span>
+    </button>
+    <noscript><a class="button" href="{{FILM}}" target="_blank" rel="noopener">Watch the film on YouTube<span class="sr-only"> (opens a new tab)</span></a></noscript>
+  </div>
+  <p class="small-note film-note" id="film-privacy">The film loads only when you press Play (9.7 MB). English captions are already in the picture. The opening is a labelled AI illustration; the app footage shows real execution with shortened waiting. AI checks do not certify human readability.</p>
+  <nav class="film-resources" aria-label="Film resources"><a href="{{FILM}}" target="_blank" rel="noopener">Watch on YouTube<span class="sr-only"> (opens a new tab)</span></a><a href="{{BASE}}assets/FROM-HERE-jury-film-v3.mp4">Open MP4</a><a href="{{BASE}}assets/film-transcript.en.txt">Read transcript</a><a href="{{BASE}}assets/film-captions.en.vtt" download>Captions (VTT)</a><a href="{{BASE}}assets/film-captions.en.srt" download>Subtitles (SRT)</a></nav>
+</section>
+<script src="{{BASE}}assets/film.js" defer></script>
 <section class="section-rule review-grid">
   <div><h2>What to try</h2>
     <ol class="simple-steps">
@@ -13,6 +27,7 @@
       <li><div><h3>Open the five readings.</h3><p>Use Details or View checks and changes. These compare the sign’s AI readback with the facts you confirmed.</p></div></li>
       <li><div><h3>Download an A3 PDF.</h3><p>Also try the editable SVG. The checked artwork is the artwork used for export.</p></div></li>
     </ol>
+    <p class="small-note">Optional: in the checks, choose Try a memory check for a two-second recall exercise. Repeating it is practice, not a study of readability.</p>
   </div>
   <figure class="single-example"><img src="{{BASE}}assets/school-sign.svg" width="297" height="420" alt="Actual generated school example, keeping the wheelchair-accessible Main Entrance exception"><figcaption>Synthetic example · actual generated output<br><a href="{{BASE}}assets/school-sign-A3.pdf">Open the saved A3 PDF</a></figcaption></figure>
 </section>

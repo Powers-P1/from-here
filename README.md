@@ -10,7 +10,7 @@ Upload a PNG/JPG, confirm what it says, compare the original with the generated 
 
 This repository contains the application source and its Docker/Render hosting package. See [public deployment](docs/deployment.md) for the live deployment, verification and service limits.
 
-[Watch the public narrated demo — 1:33](https://www.youtube.com/watch?v=x2jaGNFlA4I). English narration and captions show the real Sonnet workflow, author edits, fresh readback and checked A3 PDF. Illustrative scenes and shortened waiting periods are disclosed. The current Sonnet integration also has [separate live evidence](docs/release-verification.md). The [earlier local-model recording — 1:28](demo/FROM-HERE-demo.mp4) is retained as an earlier reference.
+[Watch the narrated demo on the jury page — 1:33](https://powers-p1.github.io/from-here/jury/#walkthrough) or [YouTube](https://www.youtube.com/watch?v=x2jaGNFlA4I). English narration and captions show the real Sonnet workflow, author edits, fresh readback and checked A3 PDF. Illustrative scenes and shortened waiting periods are disclosed. The current Sonnet integration also has [separate live evidence](docs/release-verification.md). The [earlier local-model recording — 1:28](demo/FROM-HERE-demo.mp4) is retained as an earlier reference. The final narrated film has [separate media rights](site/assets/LICENSE-MEDIA.txt), outside the code's MIT license.
 
 ![Actual production interface and checked sign](docs/evidence/school/application.jpg)
 

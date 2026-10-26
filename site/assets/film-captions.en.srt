@@ -1,0 +1,125 @@
+1
+00:00:00,600 --> 00:00:04,845
+A parent has seconds to find the right
+entrance, but this pickup notice
+
+2
+00:00:04,860 --> 00:00:09,360
+buries the answer in a paragraph, and
+accessible pickup uses a different door.
+
+3
+00:00:09,640 --> 00:00:13,920
+FROM HERE turns an existing notice into a
+clear A3 sign.
+
+4
+00:00:14,300 --> 00:00:15,145
+Upload a photo.
+
+5
+00:00:15,160 --> 00:00:19,260
+The AI reads it and separates the audience,
+action, place,
+
+6
+00:00:19,360 --> 00:00:20,840
+time and any condition.
+
+7
+00:00:21,060 --> 00:00:23,720
+You confirm these facts before the layout
+changes.
+
+8
+00:00:24,040 --> 00:00:28,525
+Here, we clarify child pickup, keep from
+4:30 PM and preserve
+
+9
+00:00:28,540 --> 00:00:31,260
+the main entrance for wheelchair accessible
+pickup.
+
+10
+00:00:32,560 --> 00:00:35,680
+The agent plans the hierarchy and renders
+the artwork.
+
+11
+00:00:35,880 --> 00:00:40,325
+Then a fresh AI read sees only that rendered
+sign, without the original
+
+12
+00:00:40,340 --> 00:00:42,200
+notice or expected answers.
+
+13
+00:00:42,440 --> 00:00:46,765
+Code compares the recovered information with
+your confirmed facts and checks that
+
+14
+00:00:46,780 --> 00:00:47,680
+the text fits.
+
+15
+00:00:47,960 --> 00:00:50,060
+The agent can adjust the layout twice.
+
+16
+00:00:50,200 --> 00:00:53,165
+If it still fails, the final PDF stays
+blocked.
+
+17
+00:00:53,180 --> 00:00:56,160
+This real run passed on its first layout.
+
+18
+00:00:56,440 --> 00:00:59,640
+Five fact groups recovered, including the
+linked exception.
+
+19
+00:01:01,100 --> 00:01:02,880
+Compare the original with the result.
+
+20
+00:01:03,060 --> 00:01:07,345
+Download that same checked design as an A3
+PDF or editable
+
+21
+00:01:07,360 --> 00:01:11,665
+SVG. For a school office or reception desk,
+this means producing a
+
+22
+00:01:11,680 --> 00:01:15,425
+usable sign without rebuilding it in a
+design tool, while keeping critical
+
+23
+00:01:15,440 --> 00:01:19,665
+conditions visible. An optional two-second
+exercise checks recall
+
+24
+00:01:19,680 --> 00:01:20,640
+on this screen.
+
+25
+00:01:20,860 --> 00:01:22,345
+Repeated attempts are practice.
+
+26
+00:01:22,360 --> 00:01:25,740
+Automated checks do not certify human
+readability.
+
+27
+00:01:26,240 --> 00:01:30,060
+FROM HERE, a clearer sign with the important
+details still there.

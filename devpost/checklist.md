@@ -56,7 +56,7 @@ displayed plan. Mechanical verification and honest evidence remain mandatory.
 - [ ] Final kick-the-tires exploration and feedback completed.
 
 ## Final Review
-- [ ] All mechanical release checks and visual fidelity comparison passed.
+- [x] Mechanical release checks and representative visual comparison passed; actual coverage and remaining human checks are documented in `docs/release-verification.md` and `docs/operating-plan.md`.
 - [x] Final review complete — feedback resolved and learner confirms ready to ship.
 
 ## Code Tour and App Map
@@ -85,3 +85,4 @@ Activity mode: Autonomous execution requested; reference route and concise expla
 - Release mechanics verified: the production build and all 38 current automated tests pass. The mentor independently completed the live public AI workflow, 5/5 checks and an actual A3 PDF download. The narrated 93-second film v3 is public at https://www.youtube.com/watch?v=x2jaGNFlA4I after explicit publication and upload-terms approval; English captions were published and browser playback checked. Participant form answers, hands-on exploration and submission are not invented.
 - One all-2B CPU experiment completed but correctly stopped at 2/5 readback after two repairs. It is rejected as a supported minimum. The default verified Qwen/Gemma setup is retained and its external model-host requirements are documented.
 - Release and submission completed on 26 October 2026: the participant supplied/corrected personal questionnaire answers and explicitly approved the final eligibility statements, terms and sending. Devpost displayed “Project submitted!” for https://devpost.com/software/from-here . The release includes the public repository, planning documents, live app, narrated film, dedicated cover and three captioned evidence images. Unperformed participant hands-on and learning activities above remain unchecked.
+- Checklist follow-up on 26 October: a native jury film with transcript/captions, local share preview, contact, audience and business-hypothesis copy were added. The upload screen now states English / PNG or JPG / 10 MB before selection. Five additional regression cases protect actual readSign request isolation and concurrent-edit PDF rejection; all 43 tests and the production build pass. Physical-phone, target-user and subjective audio checks remain explicitly unperformed.

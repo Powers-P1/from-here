@@ -1,5 +1,7 @@
 # Release verification
 
+Latest checklist follow-up, 26 October 2026: **43 automated tests and the production build pass**. Five added regression cases verify the actual `readSign` request boundary and reject an old PDF when facts/version/hash/phase change during asynchronous export. Earlier counts below identify earlier checkpoints. The app's upload screen now states the English PNG/JPG and 10 MB limits before choosing a file; no AI/rendering behavior was changed. Site and judging operation details are in [public site](public-site.md) and [handoff](operating-plan.md).
+
 Date: 25 October 2026. The original local-model recording uses source checkpoint `72e5571` (documentation and packaging followed it). The current configuration adds Anthropic / Claude Sonnet 5.5, with a separately verified live workflow below. The earlier recording remains explicitly local-model evidence.
 
 ## Anthropic / Claude Sonnet integration

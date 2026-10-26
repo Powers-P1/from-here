@@ -43,6 +43,7 @@ export function Upload({ job, distance, pending, issue, error, onFile, onSample,
         <fieldset className="distance-field"><legend>How far away will people read it?</legend><div className="distance-options">{([1,3,5] as const).map(value => <label key={value} className={distance === value ? 'selected' : ''}>
           <input type="radio" name="distance" checked={distance === value} value={value} onChange={() => onDistance(value)} disabled={Boolean(pending)} /><span>{value} m</span>
         </label>)}</div></fieldset>
+        <p className="help-text">One English notice · PNG or JPG · up to 10 MB</p>
         <ErrorMessage>{error}</ErrorMessage>
         <Button data-guide-target={job ? 'read' : 'upload'} icon="arrow" onClick={job ? onRead : choose} disabled={Boolean(pending)}>{pending ? 'Opening your photo…' : job ? 'Find key details' : 'Choose photo'}</Button>
         {!job ? <TextButton data-guide-target="sample" className="center-link" onClick={onSample} disabled={Boolean(pending)}>Use sample notice</TextButton> : null}

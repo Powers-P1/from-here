@@ -19,6 +19,8 @@ const routes = [
 await mkdir(join(destination, 'assets'), { recursive: true });
 const assets = [
   [join(source, 'site.css'), 'site.css'],
+  [join(source, 'film.js'), 'film.js'],
+  ...['film-poster.png', 'share-card.png', 'film-transcript.en.txt', 'film-captions.en.vtt', 'film-captions.en.srt', 'FROM-HERE-jury-film-v3.mp4', 'LICENSE-MEDIA.txt'].map(name => [join(source, 'assets', name), name]),
   [join(source, 'assets/school-sign.svg'), 'school-sign.svg'],
   [join(source, 'assets/school-sign-A3.pdf'), 'school-sign-A3.pdf'],
   [join(source, 'assets/corner.svg'), 'corner.svg'],

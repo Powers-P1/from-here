@@ -1,0 +1,28 @@
+FROM HERE jury film v3 — media rights
+
+FROM-HERE-jury-film-v3.mp4 is a finished audiovisual presentation. It is
+published here for viewing the FROM HERE hackathon demonstration. The MIT
+source-code license does not grant reuse rights to the licensed music,
+narration or the film as a whole. No raw licensed music or voice file is
+distributed in this repository.
+
+Application captures: original FROM HERE application, synthetic notice,
+actual Claude Sonnet workflow; waiting shortened and disclosed in the film.
+Opening illustration: Google Flow / Veo 3.1 Fast, generated for this project
+and labelled as an illustrative AI scene.
+Narration: Epidemic Sound Voices / ElevenLabs, Marie, generated English text.
+Music: Open Seas — Martin Landh, Epidemic Sound, used in the finished film
+under the participant's active Pro trial at publication on 26 October 2026.
+https://www.epidemicsound.com/music/tracks/25dc47dc-7f79-49e5-bf27-0c15fcd4c15e/
+
+Pro plan includes websites and online video. Published while active; original
+source audio is retained privately and is not offered for extraction/reuse.
+https://help.epidemicsound.com/hc/en-us/articles/26247236323858-Pro-Plan
+https://www.epidemicsound.com/how-it-works/free-trial/
+
+Film SHA-256:
+cb955a003fbd93f8156d7d29d0a96ccb6d461622769eb1428daa07d5b51cdbe0
+
+English transcript and VTT/SRT files are provided for accessibility alongside
+the film. The film poster uses the original project cover and actual generated
+school sign; it is not a fabricated application screenshot.
